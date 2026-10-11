@@ -1,0 +1,33 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-moat-s2",
+    "kind": "HOME",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Moat S2 water sensor",
+    "notes": "Moat S2 leak/temperature sensor: service data under its 128-bit UUID 00001000-0000-1000-8000-00805f9b34fb (Bluetooth-Devices/moat-ble, MIT); a second advertising form is keyed by manufacturer ID 0x1000 in ble_monitor's parser (MIT) — both forms are included; which one current firmware emits is unconfirmed.",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_DATA",
+            "radio": "BLE",
+            "text": "00001000-0000-1000-8000-00805F9B34FB"
+        },
+        {
+            "companyId": 4096,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "MANUFACTURER_ID",
+            "radio": "BLE",
+            "text": ""
+        }
+    ],
+    "sequentialMac": false
+}

@@ -1,9 +1,9 @@
 {
     "format": "fieldwatch-signatures",
     "formatVersion": 1,
-    "exportedAt": "2026-10-11T07:42:48Z",
+    "exportedAt": "2026-10-11T07:50:53Z",
     "appVersion": "stock",
-    "catalogVersion": 101,
+    "catalogVersion": 102,
     "fleets": [
         {
             "id": "fleet-dahua",
@@ -26961,6 +26961,39 @@
             "attentionNote": "",
             "builtIn": true,
             "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-moat-s2",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Moat S2 water sensor",
+            "notes": "Moat S2 leak/temperature sensor: service data under its 128-bit UUID 00001000-0000-1000-8000-00805f9b34fb (Bluetooth-Devices/moat-ble, MIT); a second advertising form is keyed by manufacturer ID 0x1000 in ble_monitor's parser (MIT) — both forms are included; which one current firmware emits is unconfirmed.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "radio": "BLE",
+                    "text": "00001000-0000-1000-8000-00805F9B34FB"
+                },
+                {
+                    "companyId": 4096,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_ID",
+                    "radio": "BLE",
+                    "text": ""
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
             "colorIndex": 3,
             "enabled": true,
             "id": "fleet-manual-ninebot",
@@ -27138,6 +27171,361 @@
                     "kind": "SERVICE_UUID",
                     "radio": "BLE",
                     "text": "FD69"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-curtain-3",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot Curtain 3",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "5B",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "7B",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-curtain",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot Curtain",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "63",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "43",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-fan",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot Fan (WoFan)",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "46",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "66",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-hub-mini",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot Hub Mini",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "4D",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "6D",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-hub-plus",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot Hub Plus",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "50",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "70",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-hub",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot Hub (WoLink)",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "4C",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "6C",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-lock",
+            "kind": "LOCK",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot Lock",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "6F",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-meter-typecode",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot Meter (type code)",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "54",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "74",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-woan",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot (Woan broadcast)",
+            "notes": "SwitchBot Color Bulb / LED Strip Light / Plug Mini advertise only manufacturer data with company ID 0x0969 (Woan Technology, SwitchBot's parent) and no device-type byte, so the three cannot be told apart from the broadcast alone (official spec: OpenWonderLabs/SwitchBotAPI-BLE). Protocol-level brand match.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 2409,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_ID",
+                    "radio": "BLE",
+                    "text": ""
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-switchbot-wobutton",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "SwitchBot WoButton (Remote)",
+            "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "42",
+                    "enabled": true,
+                    "kind": "SERVICE_DATA",
+                    "offset": 0,
+                    "radio": "BLE",
+                    "text": "FD3D"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-thermobeacon-extra",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "ThermoBeacon (additional types)",
+            "notes": "Additional ThermoBeacon/Brifit sensor types 0x14 and 0x30 (manufacturer-data leading byte read as pseudo company ID, the same encoding the Theengs WS02-WS08 fleet uses for types 0x10/0x11/0x15/0x18/0x1B). Source: Bluetooth-Devices/thermobeacon-ble DEVICE_TYPES (MIT).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 20,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_ID",
+                    "radio": "BLE",
+                    "text": ""
+                },
+                {
+                    "companyId": 48,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_ID",
+                    "radio": "BLE",
+                    "text": ""
                 }
             ],
             "sequentialMac": false

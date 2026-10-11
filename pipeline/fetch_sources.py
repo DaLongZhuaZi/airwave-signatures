@@ -29,6 +29,7 @@ FILES = {
         "https://raw.githubusercontent.com/Bluetooth-Devices/xiaomi-ble/main/src/xiaomi_ble/devices.py",
     # IEEE OUI 注册表三件套（MA-L / MA-M / MA-S）
     "oui.csv": "https://standards-oui.ieee.org/oui/oui.csv",
+    "cid.csv": "https://standards-oui.ieee.org/cid/cid.csv",
     "mam.csv": "https://standards-oui.ieee.org/oui28/mam.csv",
     "oui36.csv": "https://standards-oui.ieee.org/oui36/oui36.csv",
     # 蓝牙 SIG Assigned Numbers

@@ -1,0 +1,25 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-switchbot-woan",
+    "kind": "HOME",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "SwitchBot (Woan broadcast)",
+    "notes": "SwitchBot Color Bulb / LED Strip Light / Plug Mini advertise only manufacturer data with company ID 0x0969 (Woan Technology, SwitchBot's parent) and no device-type byte, so the three cannot be told apart from the broadcast alone (official spec: OpenWonderLabs/SwitchBotAPI-BLE). Protocol-level brand match.",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 2409,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "MANUFACTURER_ID",
+            "radio": "BLE",
+            "text": ""
+        }
+    ],
+    "sequentialMac": false
+}

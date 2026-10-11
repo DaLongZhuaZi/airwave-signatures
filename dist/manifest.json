@@ -1,16 +1,16 @@
 {
-  "builtAt": "2026-10-11T07:42:48Z",
-  "catalogVersion": 101,
+  "builtAt": "2026-10-11T07:50:53Z",
+  "catalogVersion": 102,
   "catalog": {
     "file": "fieldwatch-signatures-v2.json",
-    "fleets": 578,
-    "rules": 10893,
-    "sha256": "bd5d11ee200b9a06ee8169c4c796ca21201748eff774b00931e848018f637ba3"
+    "fleets": 611,
+    "rules": 10958,
+    "sha256": "400648333793cef7c086ae3c5da6c969ba4fdccde363264b41f56e7b1cda7f78"
   },
   "cnPack": {
     "file": "cn-pack.json",
-    "fleets": 140,
-    "sha256": "a2882a13b56a70b9a0c8de4a9e4e09576133391172cd11d5e75e3a8de6346794"
+    "fleets": 152,
+    "sha256": "6be4c2dab9f91071de78583848635d525fe70ae61fae53aef0d8fea6e7be15d9"
   },
   "sources": {
     "upstream": {
@@ -419,9 +419,13 @@
       "added": 7,
       "models": 7
     },
+    "blemonitor": {
+      "added": 21,
+      "table_fleets": 21
+    },
     "manual": {
-      "added": 15,
-      "manual_fleets": 15
+      "added": 27,
+      "manual_fleets": 27
     }
   },
   "radiodb": {
@@ -429,12 +433,12 @@
     "builtYmd": 20261011,
     "sections": {
       "mal": 40319,
-      "cid": 218,
+      "cid": 221,
       "long": 13854,
       "btc": 4047,
       "app": 342,
       "uuid": 793
     },
-    "sha256": "37828e9529909a6c81a23430b88bd24e17b4e10bbcff52c83fe731a1d6bd2617"
+    "sha256": "88d4236679a3e01edc03f14b2391c91807b07de7e4c87693b2b17a3a00844f6b"
   }
 }

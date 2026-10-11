@@ -54,7 +54,10 @@
   **`member_uuids.yaml`**）。原版漏了成员 UUID 表，导致 uuid 段只有 84 条、
   FE95（小米）等查不到名；本仓补上。
 - Nordic bluetooth-numbers-database（BSD-3）：SIG 两表之后并入补漏，命名以 SIG 为准。
-- `cid` 段：来源未确认，只能从上一版 bin 原样保留，脚本会报告新旧条数差。
+- `cid` 段：IEEE CID 注册表（standards-oui.ieee.org/cid/cid.csv，221 条）。v101 之前
+  此段来源未确认、从旧 bin 保留；2026-10-11 核查确认旧段（218 条）就是这张表的旧
+  快照（量级吻合、App 本来就在读它作 MA-L 之后的 24 位兜底查询），v102 起改用官方
+  表直接构建，抓取失败才回退旧 bin 保留。
 - 显示名覆盖仅两条（FE95 → Xiaomi Mi Service (MiBeacon)、FCD2 → BTHome）：
   SIG 成员表里只有公司名，设备详情里显示协议名才有辨识价值；只改名、不增条目。
 
@@ -77,7 +80,24 @@
 - **bluemaestro-ble**（Bluetooth-Devices，MIT）：companyId 0x0133 + 首字节类型 ID，
   8 个类型（含 THD 的 legacy/现行双 ID 合并为一个 fleet）。
 
-## 7. 手工 fleet
+## 7. ble_monitor 独有品牌 + SwitchBot 官方校准（v102 新增）
+
+- **ble_monitor**（Ernst79，MIT）：HA 社区的老牌 BLE 监控组件，47 个品牌解析器与
+  Theengs 大面积重叠，但有十几个独有品牌。其识别逻辑是命令式 Python（长度判定、
+  链式 XOR 解包、把型号字节藏进 company ID 高字节等），无法逐文件自动转换；
+  2026-10-11 逐个解析器人工提取了**可被规则引擎表达**的子集（Teltonika/ELA、
+  Michelin 胎压、Acconeer、AirMentor、Relsib、Mocreo、Chef iQ、Grundfos、Hörmann、
+  Laica、Almendo、Blustream、Beckett、Jinou、ThermoPro 名模式、HolyIoT 追踪形态，
+  共 21 个 fleet），落成 `fleets/blemonitor.json` 数据表 + 转换器。不可表达的
+  （iNode、Xiaogui、Sonoff、AltBeacon、Beckett 型号层、Mocreo 型号层）与主动
+  不收的（Senssun，cid 0x0100 碰撞风险）理由见 CANDIDATES.md。
+- **SwitchBot 官方规范**（OpenWonderLabs/SwitchBotAPI-BLE，无许可证文件，只取
+  事实性类型码）：按官方 FD3D 类型码逐项核对 Theengs 的 7 个 fleet，补齐缺口
+  10 个手工 fleet（WoButton、Hub、Hub Plus、Hub Mini、Fan、Curtain、Curtain 3、
+  Lock、Meter 类型码、0969 协议级）。Color Bulb/LED Strip/Plug Mini 官方广播无
+  类型字节，只能靠 0x0969 厂商数据整体识别到品牌。
+
+## 8. 手工 fleet
 
 `fleets/manual/*.json`：协议级（MiBeacon 通用、BTHome、Eddystone）与国内特化特征。
 入库门槛：文件内 `notes` 必须写明指纹出处。无出处的"听说"不收。

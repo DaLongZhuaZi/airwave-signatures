@@ -22,7 +22,7 @@ sys.path.insert(0, HERE)
 
 from converters import (  # noqa: E402
     theengs, xiaomi_mibeacon, ieee_vendors, manual,
-    fastpair, apple_proximity, samsung_easysetup, bluemaestro,
+    fastpair, apple_proximity, samsung_easysetup, bluemaestro, blemonitor,
 )
 
 
@@ -131,6 +131,11 @@ def main():
         stage_fleets, stage_stats = module.convert(CACHE)
         add_fleets(stage_fleets, stage_name)
         stats[stage_name].update(stage_stats)
+
+    # 阶段 4b：ble_monitor 独有品牌识别表（fleets/blemonitor.json，人工提取）
+    blemonitor_fleets, blemonitor_stats = blemonitor.convert(ROOT)
+    add_fleets(blemonitor_fleets, 'blemonitor')
+    stats['blemonitor'].update(blemonitor_stats)
 
     # 阶段 5：手工 fleet（协议级 + 国内特化）
     manual_fleets, manual_stats = manual.convert(os.path.join(ROOT, 'fleets', 'manual'))

@@ -9,7 +9,11 @@
 | 来源 | 结论 |
 |---|---|
 | Bluetooth-Devices/qingping-ble（FDCD 服务数据，18 个类型 ID） | Theengs 的清萍 fleet 已用同一 FDCD+类型字节路线覆盖，互为交叉验证，不重复建转换器 |
-| Bluetooth-Devices 的 govee/inkbird/oralb/ruuvi/thermopro/moat/mopeka/sensorpush/atc/thermobeacon/xiaogui/leaone 等库 | 对应品牌 fleet 已由 Theengs 覆盖（Govee、Inkbird、Oral-B、Ruuvi、Mopeka、SensorPush 等逐个核对在目录中）；moat 仅 1 型号且为非基 UUID 的 128 位服务数据，规则形态不稳，跳过 |
+| Bluetooth-Devices 的 govee/inkbird/oralb/ruuvi/thermopro/mopeka/sensorpush/atc/xiaogui/leaone 等库 | 对应品牌 fleet 已由 Theengs 覆盖（Govee、Inkbird、Oral-B、Ruuvi、Mopeka、SensorPush 等逐个核对在目录中） |
+| Moat S2（128 位服务数据 UUID） | **v101 文档误记为已覆盖，v102 核查纠正**：此前全目录无 Moat；其 128 位 UUID 服务数据规则形态与 SensorPush 先例一致，v102 已补手工 fleet |
+| ThermoBeacon/Brifit 类型字节 0x14/0x30 | Theengs fleet 只收了 5 个类型，v102 已补手工 fleet（伪 companyId 口径与 Theengs 一致） |
+| Kegtron | **最终裁定不可表达**：曾以为 companyId 0xFFFF + 固定 27 字节长度界可成 fleet，v102 构建时被校验器拦下——引擎要求 MANUFACTURER_DATA 必须带非空数据前缀，而 Kegtron 负载无任何恒定起始字节（字段直接排布）。除非引擎将来支持"cid+长度"规则，否则不收 |
+| IEEE CID 注册表（221 条） | v101 时列为待定；v102 核查发现 bin 里原有 cid 段（218 条、来源未确认）就是这张表的旧快照且 App 本来就在读它作 24 位兜底——已改为官方 cid.csv 直接构建，App 零改动 |
 | Google FMDN（FEAA+40/41） | 上游 v94 已有 "Google Find Hub" fleet 同规则覆盖 |
 | Tile FEED+0200 前缀、Samsung FD5A | 上游 Tile/SmartTags fleet 已覆盖；FD69/FE33/FA25 为净增量（已进手工 fleet） |
 | ble_monitor 的 xiaomi.py 设备表（77 条） | 与 xiaomi-ble 的 92 PID 同源同物，xiaomi-ble 已接入 |
@@ -19,16 +23,20 @@
 
 ## 已评估：有真增量，待建转换器（按价值排序）
 
-1. **custom-components/ble_monitor 的独有品牌解析器**（MIT，ble_parser 47 个品牌模块）：
-   Theengs 未覆盖的品牌包括 teltonika（资产追踪器）、mikrotik（标签）、michelin（胎压）、
-   acconeer、chefiq、grundfos、holyiot、hormann、kkm、laica、mocreo、oras、relsib、
-   sensirion、smartdry 等。各解析器多含设备字典，需逐个评估识别机制后写转换器。
-2. **IEEE CID 注册表**（standards-oui.ieee.org/cid/cid.csv）：MA-L/M/S 之外的第四张
-   IEEE 表，maclookup 的库里含它。注意 CID 用于本地管理位 MAC，是否并入 radiodb
-   mal 段需先想清楚误报口径（随机 MAC 段），未定前不并入。
-3. **SwitchBot 官方 BLE 规范**（OpenWonderLabs/SwitchBotAPI-BLE，10 个设备类型，
-   service data 首字节为类型码）：Theengs 已有 7 个 SwitchBot fleet，本源可作官方
-   校准与查漏；该仓无 LICENSE 文件，只取事实性类型码。
+1. **custom-components/ble_monitor 独有品牌**（MIT）：**v102 已完成提取**——
+   47 个品牌模块逐个深挖后，可表达的子集 21 个 fleet 已进管线（Teltonika/ELA、
+   Michelin、Acconeer、AirMentor、Relsib、Mocreo、Chef iQ、Grundfos、Hörmann、
+   Laica、Almendo、Blustream、Beckett、Jinou、ThermoPro、HolyIoT 追踪形态）；
+   KKM/MikroTik/Oras/Sensirion/SmartDry 经实测已被 Theengs 覆盖。不可表达
+   （引擎语义问题，非数据问题）：iNode（型号占 cid 高字节、低字节不校验）、
+   Xiaogui（cid 高字节是帧计数器）、Sonoff（写死测试 MAC 门控 + XOR 加密）、
+   AltBeacon（任意 cid + BEAC 前缀，规则必须绑单一 cid）、Beckett/Mocreo 的
+   型号层（XOR 解包 / cid 高字节）。Senssun（cid 0x0100）碰撞风险高，主动不收。
+   ThermoPro 此前被误以为已覆盖，实测 v101 目录无其设备 fleet，v102 已补名模式 fleet。
+2. **SwitchBot 官方 BLE 规范**（OpenWonderLabs/SwitchBotAPI-BLE）：v102 已按官方
+   类型码补齐缺口（WoButton/Hub/Hub Plus/Hub Mini/Fan/Curtain/Curtain 3/Lock/
+   Meter 类型码 + 0969 协议级 fleet）；该仓无 LICENSE 文件，只取事实性类型码。
+   余下未收：Contact/Motion 的配对模式码（0x44/0x53，常广播码已覆盖，价值低）。
 4. **BTHome object-id 细化**（Bluetooth-Devices/bthome-ble，95 个 object id）：
    可把现有协议级 BTHome fleet 细化到设备品类，依赖 App 引擎对 object id 的解析
    粒度，属二期。

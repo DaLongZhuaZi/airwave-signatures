@@ -1,0 +1,35 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-switchbot-fan",
+    "kind": "HOME",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "SwitchBot Fan (WoFan)",
+    "notes": "SwitchBot official BLE spec (OpenWonderLabs/SwitchBotAPI-BLE): FD3D service data byte 0 = device type code (ASCII); uppercase = pair/add mode, lowercase = normal broadcast. Theengs fleets cover Bot/Contact/Motion/Blind Tilt/Meter Pro/Outdoor Meter; this type was missing.",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "46",
+            "enabled": true,
+            "kind": "SERVICE_DATA",
+            "offset": 0,
+            "radio": "BLE",
+            "text": "FD3D"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "66",
+            "enabled": true,
+            "kind": "SERVICE_DATA",
+            "offset": 0,
+            "radio": "BLE",
+            "text": "FD3D"
+        }
+    ],
+    "sequentialMac": false
+}

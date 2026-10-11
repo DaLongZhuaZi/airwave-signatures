@@ -1,0 +1,33 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-thermobeacon-extra",
+    "kind": "HOME",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "ThermoBeacon (additional types)",
+    "notes": "Additional ThermoBeacon/Brifit sensor types 0x14 and 0x30 (manufacturer-data leading byte read as pseudo company ID, the same encoding the Theengs WS02-WS08 fleet uses for types 0x10/0x11/0x15/0x18/0x1B). Source: Bluetooth-Devices/thermobeacon-ble DEVICE_TYPES (MIT).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 20,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "MANUFACTURER_ID",
+            "radio": "BLE",
+            "text": ""
+        },
+        {
+            "companyId": 48,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "MANUFACTURER_ID",
+            "radio": "BLE",
+            "text": ""
+        }
+    ],
+    "sequentialMac": false
+}

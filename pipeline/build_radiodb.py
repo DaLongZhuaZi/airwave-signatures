@@ -13,7 +13,7 @@
   app   <- 蓝牙 SIG 官方 GAP Appearance   assigned_numbers/core/appearance_values.yaml
   uuid  <- 蓝牙 SIG 官方服务 UUID         assigned_numbers/uuids/service_uuids.yaml
            并集 Nordic 镜像的厂商服务段（0xFC00-0xFFFF）
-  cid   <- 来源未确认，从现有 bin 原样保留
+  cid   <- IEEE CID 注册表 cid.csv（v102 起；此前来源未确认的旧段经核对即此表旧快照）
 
 关于 uuid 为什么取并集：官方 service_uuids.yaml 只收采纳服务（0x1800-0x18FF，76 条），
 不含厂商/成员服务段；而 0xFCxx-0xFExx 里恰恰是 Fast Pair、Eddystone、暴露通知这些
@@ -34,6 +34,7 @@ IEEE = {
     'oui.csv': 'https://standards-oui.ieee.org/oui/oui.csv',
     'mam.csv': 'https://standards-oui.ieee.org/oui28/mam.csv',
     'oui36.csv': 'https://standards-oui.ieee.org/oui36/oui36.csv',
+    'cid.csv': 'https://standards-oui.ieee.org/cid/cid.csv',
 }
 SIG_BASE = 'https://bitbucket.org/bluetooth-SIG/public/raw/main/assigned_numbers'
 SIG = {
@@ -226,6 +227,16 @@ def build_sections(args):
     mal = read_ieee(fetch(cache, 'oui.csv', IEEE['oui.csv']), 6)
     out['mal'] = sorted(set(mal))
     sys.stderr.write('  mal  %d 条%s' % (len(out['mal']), NL))
+    # IEEE CID 注册表（EUI-48 的 Company ID 段）：v101 之前此段来源未确认、只能从
+    # 旧 bin 原样保留；官方 cid.csv 与 oui.csv 同构（221 条，2026-10 实测），
+    # 从 v102 起直接用官方表构建，抓不到时才回退旧 bin 保留（见 main）。
+    try:
+        cid_entries = read_ieee(fetch(cache, 'cid.csv', IEEE['cid.csv']), 6)
+        if cid_entries:
+            out['cid'] = sorted(set(cid_entries))
+            sys.stderr.write('  cid  %d 条（IEEE CID 官方）%s' % (len(out['cid']), NL))
+    except Exception as exc:  # noqa: BLE001
+        sys.stderr.write('  cid  官方表抓取失败（%s），回退旧 bin 保留%s' % (exc, NL))
     mam = read_ieee(fetch(cache, 'mam.csv', IEEE['mam.csv']), 7)
     mas = read_ieee(fetch(cache, 'oui36.csv', IEEE['oui36.csv']), 9)
     out['long'] = sorted(set([((28, v), n) for v, n in mam] + [((36, v), n) for v, n in mas]))
@@ -338,7 +349,7 @@ def main():
     sections = build_sections(args)
     if args.existing:
         old = parse_existing(args.existing)
-        if old.get('cid'):
+        if old.get('cid') and 'cid' not in sections:
             sections['cid'] = sorted(old['cid'].items())
             sys.stderr.write('  cid  %d 条（从现有 bin 保留）%s' % (len(sections['cid']), NL))
         sys.stderr.write(NL + '  基线对比（新 / 旧）：' + NL)

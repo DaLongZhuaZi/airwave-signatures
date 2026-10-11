@@ -92,3 +92,24 @@ sources:
     license: "GPL-3.0 (broadcast name patterns are factual)"
     role: "体重秤广播名模式出处（云麦/Picooc/QN 手工 fleet）"
     fetch: "手工核对（fleets/manual/*.json 的 notes 逐条注明）"
+
+  - id: ble-monitor
+    name: "custom-components/ble_monitor ble_parser (Home Assistant community)"
+    url: "https://github.com/Ernst79/ble_monitor"
+    license: "MIT"
+    role: "Theengs 未覆盖品牌的识别表 -> fleets/blemonitor.json（人工提取，转换器 pipeline/converters/blemonitor.py）"
+    fetch: "手工提取（识别逻辑是命令式代码，不适合逐文件自动抓取转换；刷新纪律见 fleets/blemonitor.json 头注）"
+
+  - id: switchbot-api-ble
+    name: "OpenWonderLabs/SwitchBotAPI-BLE official advertisement spec"
+    url: "https://github.com/OpenWonderLabs/SwitchBotAPI-BLE"
+    license: "未声明（仅取事实性设备类型码）"
+    role: "SwitchBot 官方类型码缺口出处（fleets/manual/switchbot-*.json）"
+    fetch: "手工核对（notes 逐条注明）"
+
+  - id: ieee-cid
+    name: "IEEE Registration Authority CID registry"
+    url: "https://standards-oui.ieee.org/cid/cid.csv"
+    license: "Public factual registry"
+    role: "radiodb 的 cid 段（EUI-48 Company ID，App 作 24 位厂商兜底查询）"
+    fetch: "pipeline/fetch_sources.py -> .cache/cid.csv"
