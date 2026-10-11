@@ -26,16 +26,18 @@ jobs:
       - name: Bump catalog version if dist changed
         id: diff
         run: |
-          if git diff --quiet -- dist/fieldwatch-signatures-v2.json dist/radiodb.bin; then
+          # dist_changed.py 忽略构建时间戳（catalog 的 exportedAt、radiodb 的 builtYmd），
+          # 只有数据实质变化才发版，避免每周空转 PR。
+          if python3 pipeline/dist_changed.py; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            V=$(cat pipeline/VERSION)
+            echo $((V + 1)) > pipeline/VERSION
+            python3 pipeline/build_catalog.py
+            python3 pipeline/validate_catalog.py
+          else
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No data changes."
-            exit 0
           fi
-          echo "changed=true" >> "$GITHUB_OUTPUT"
-          V=$(cat pipeline/VERSION)
-          echo $((V + 1)) > pipeline/VERSION
-          python3 pipeline/build_catalog.py
-          python3 pipeline/validate_catalog.py
 
       - name: Open update PR
         if: steps.diff.outputs.changed == 'true'

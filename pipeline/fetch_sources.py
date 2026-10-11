@@ -53,15 +53,15 @@ FILES = {
 THEENGS_RAW = "https://raw.githubusercontent.com/theengs/decoder/development/src/devices/"
 
 
-def fetch(url: str, path: str) -> str:
+def fetch(url: str, path: str, retries: int = 3) -> str:
     if os.path.exists(path) and os.path.getsize(path) > 0:
         return path
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    # 3 次重试：个别源站会临时 refuse 云厂商 IP（如 IEEE 对 GitHub runner），
+    # 默认 3 次重试：个别源站会临时 refuse 云厂商 IP（如 IEEE 对 GitHub runner），
     # 退避后通常可达；仍失败才向上抛错让本次构建显式失败（不静默用旧数据）。
     import time
     last_exc: Exception | None = None
-    for attempt in range(3):
+    for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers=UA)
             with urllib.request.urlopen(req, timeout=180) as resp:
@@ -108,7 +108,7 @@ def main() -> None:
             continue
         if name == "manuf":
             try:
-                fetch(url, os.path.join(CACHE, name))
+                fetch(url, os.path.join(CACHE, name), retries=1)
             except Exception as exc:  # 交叉参考源，失败只警告
                 sys.stderr.write(f"  WARN: manuf fetch failed ({exc}), skipped\n")
             continue
