@@ -1,0 +1,25 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-ttlock",
+    "kind": "LOCK",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "TTLock smart lock",
+    "notes": "TTLock (Sciener) smart locks advertise their primary service 0x1910; broadcast names look like <model>_<last 3 MAC bytes hex> (e.g. S534_1d22bd). The first two manufacturer-data bytes are a protocol header, not a company ID, so no MANUFACTURER_ID rule is used. Source: roquerodrigo/ttlock-ble (MIT).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_UUID",
+            "radio": "BLE",
+            "text": "1910"
+        }
+    ],
+    "sequentialMac": false
+}

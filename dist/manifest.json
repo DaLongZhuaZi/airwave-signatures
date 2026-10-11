@@ -1,16 +1,16 @@
 {
-  "builtAt": "2026-10-11T06:47:49Z",
-  "catalogVersion": 100,
+  "builtAt": "2026-10-11T07:42:48Z",
+  "catalogVersion": 101,
   "catalog": {
     "file": "fieldwatch-signatures-v2.json",
-    "fleets": 499,
-    "rules": 10263,
-    "sha256": "616d9c7a07f27b9b117a15c1a7abf24b855bd17360d2c747b69dfb751eb2ed94"
+    "fleets": 578,
+    "rules": 10893,
+    "sha256": "bd5d11ee200b9a06ee8169c4c796ca21201748eff774b00931e848018f637ba3"
   },
   "cnPack": {
     "file": "cn-pack.json",
-    "fleets": 128,
-    "sha256": "cd9f08243eecc91abb305fe4af054dc6b365127672a53521f3cd02fd600cb08e"
+    "fleets": 140,
+    "sha256": "a2882a13b56a70b9a0c8de4a9e4e09576133391172cd11d5e75e3a8de6346794"
   },
   "sources": {
     "upstream": {
@@ -385,9 +385,43 @@
       "fleet-dji": 16,
       "fleet-insta360": 1
     },
+    "fastpair": {
+      "added": 14,
+      "model_ids": 490,
+      "skipped_junk": 10,
+      "brand_fleets": {
+        "bang-olufsen": 14,
+        "boat": 5,
+        "bose": 9,
+        "cleer": 5,
+        "generic": 150,
+        "google": 15,
+        "jabra": 13,
+        "jbl": 88,
+        "lg": 27,
+        "oraimo": 5,
+        "realme": 5,
+        "samsung": 11,
+        "sony": 135,
+        "soundcore": 8
+      }
+    },
+    "apple_proximity": {
+      "added": 27,
+      "models": 27
+    },
+    "samsung_easysetup": {
+      "added": 19,
+      "watch_model_bytes": 30,
+      "buds_prefixes": 20
+    },
+    "bluemaestro": {
+      "added": 7,
+      "models": 7
+    },
     "manual": {
-      "added": 3,
-      "manual_fleets": 3
+      "added": 15,
+      "manual_fleets": 15
     }
   },
   "radiodb": {

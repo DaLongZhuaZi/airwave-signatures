@@ -1,0 +1,41 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-yunmai-scale",
+    "kind": "HEALTH",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Yunmai scale",
+    "notes": "Yunmai (云麦) body scales, broadcast name patterns from openScale's Yunmai handler supportFor (GPL-3.0, patterns are factual). The generic ISM* prefix from the same handler is deliberately NOT included (too collision-prone).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "YUNMAI-SIGNAL*"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "ISC2P*"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "ISSE*"
+        }
+    ],
+    "sequentialMac": false
+}

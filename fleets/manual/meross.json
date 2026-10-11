@@ -1,0 +1,33 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-meross",
+    "kind": "HOME",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Meross",
+    "notes": "Meross devices in pairing mode advertise as Meross-<...> with service data UUID 0xBE30 (GATT service 99e7be30-...). Matching rules are the vendor org's own Home Assistant discovery criteria. Source: meross_rpc (MIT), Meross's official-org community repo.",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "Meross-*"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_UUID",
+            "radio": "BLE",
+            "text": "BE30"
+        }
+    ],
+    "sequentialMac": false
+}

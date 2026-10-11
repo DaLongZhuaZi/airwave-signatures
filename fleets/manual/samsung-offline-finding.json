@@ -1,0 +1,25 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-samsung-offline-finding",
+    "kind": "FINDER",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Samsung Offline Finding",
+    "notes": "Protocol-level match: Samsung offline-finding network service FD69 (Bluetooth SIG member registry: Samsung Electronics). Broadcast by Galaxy phones participating in Samsung's offline finding network and by lost devices. Source: seemoo-lab/AirGuard tracker definitions (Apache-2.0).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_UUID",
+            "radio": "BLE",
+            "text": "FD69"
+        }
+    ],
+    "sequentialMac": false
+}

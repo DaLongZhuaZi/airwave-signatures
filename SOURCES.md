@@ -58,7 +58,33 @@
 - 显示名覆盖仅两条（FE95 → Xiaomi Mi Service (MiBeacon)、FCD2 → BTHome）：
   SIG 成员表里只有公司名，设备详情里显示协议名才有辨识价值；只改名、不增条目。
 
-## 6. 手工 fleet
+## 6. 社区逆向汇编的配对/型号表（v101 新增）
+
+这一类来源的共性：数据本身是各厂商广播里的**事实性编码表**（型号 ID、型号字节），
+由社区从真实设备广播逆向汇编，维护活跃；转换器只做格式映射，不做任何推测填充。
+
+- **Flipper ble_spam fastpair.c**（Momentum-Apps，GPL-3.0）：Google 不公开 Fast Pair
+  型号注册表，社区表 530 条（过滤测试/占位条目后 490 条进目录），FE2C 服务数据前
+  3 字节即型号 ID。按品牌分 fleet（Sony 135、JBL 88、LG 27 为大头），分不出的进
+  通用 Fast Pair fleet；与 DiamondRoPlayz/FastPair-Models（122 条）交叉核对过。
+- **Flipper ble_spam easysetup.c**（同上）：三星 EasySetup 配对广播
+  （companyId 0x0075）。Watch 型号字节位于固定头 `010002000101FF000043` 之后，
+  按"去颜色词后的型号名"分 fleet（Watch4/5/6 各尺寸）；Buds 的 3 字节型号/颜色码
+  被常量字节劈开，只取前两字节做前缀（20 条）。
+- **Bruce 固件 APPLE_PROXIMITY_DEVICES**（GPL-3.0，移植自 Flipper 且更新）：Apple
+  Proximity Pairing 型号字 27 条（07 19 TLV + 状态前缀 01/07，AirTag 类为 05），
+  逐型号建 fleet —— Theengs 的 AirPods fleet 只有一条通用规则，型号级识别由此补齐。
+- **bluemaestro-ble**（Bluetooth-Devices，MIT）：companyId 0x0133 + 首字节类型 ID，
+  8 个类型（含 THD 的 legacy/现行双 ID 合并为一个 fleet）。
+
+## 7. 手工 fleet
 
 `fleets/manual/*.json`：协议级（MiBeacon 通用、BTHome、Eddystone）与国内特化特征。
-入库门槛：文件内 `notes` 必须写明指纹出处。无出处的“听说”不收。
+入库门槛：文件内 `notes` 必须写明指纹出处。无出处的"听说"不收。
+v101 拓宽搜源后新增的手工 fleet 及其出处：三星离线查找 FD69 / Chipolo FE33 /
+Pebblebee FA25（seemoo-lab/AirGuard，Apache-2.0，且与 SIG 成员注册表对 FD69/FE33
+的归属互相印证）、Ninebot/小米滑板车（社区协议文档）、TTLock 0x1910
+（ttlock-ble，MIT）、Meross（厂商组织仓 meross_rpc 的 HA 发现口径，MIT）、
+云麦/Picooc/QN 体重秤名模式（openScale handlers，GPL-3.0，事实性名模式）、
+Coospo 码表、Tilt 酿造比重计 iBeacon UUID（tilt-ble，MIT）。
+盘点过但未采用的来源与理由见 `CANDIDATES.md`。

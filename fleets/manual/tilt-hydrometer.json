@@ -1,0 +1,81 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-tilt-hydrometer",
+    "kind": "HOME",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Tilt Hydrometer",
+    "notes": "Tilt brewing hydrometer: iBeacon (companyId 0x004C, 02 15) whose UUID A495BB<color>C5B1-4B44-B512-1370F02D74DE encodes the unit color (10 Red, 20 Green, 30 Black, 40 Purple, 50 Orange, 60 Blue, 70 Yellow, 80 Pink). Source: Bluetooth-Devices/tilt-ble (MIT).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 76,
+            "dataPrefixHex": "0215A495BB10C5B14B44B5121370F02D74DE",
+            "enabled": true,
+            "kind": "MANUFACTURER_DATA",
+            "radio": "BLE",
+            "text": ""
+        },
+        {
+            "companyId": 76,
+            "dataPrefixHex": "0215A495BB20C5B14B44B5121370F02D74DE",
+            "enabled": true,
+            "kind": "MANUFACTURER_DATA",
+            "radio": "BLE",
+            "text": ""
+        },
+        {
+            "companyId": 76,
+            "dataPrefixHex": "0215A495BB30C5B14B44B5121370F02D74DE",
+            "enabled": true,
+            "kind": "MANUFACTURER_DATA",
+            "radio": "BLE",
+            "text": ""
+        },
+        {
+            "companyId": 76,
+            "dataPrefixHex": "0215A495BB40C5B14B44B5121370F02D74DE",
+            "enabled": true,
+            "kind": "MANUFACTURER_DATA",
+            "radio": "BLE",
+            "text": ""
+        },
+        {
+            "companyId": 76,
+            "dataPrefixHex": "0215A495BB50C5B14B44B5121370F02D74DE",
+            "enabled": true,
+            "kind": "MANUFACTURER_DATA",
+            "radio": "BLE",
+            "text": ""
+        },
+        {
+            "companyId": 76,
+            "dataPrefixHex": "0215A495BB60C5B14B44B5121370F02D74DE",
+            "enabled": true,
+            "kind": "MANUFACTURER_DATA",
+            "radio": "BLE",
+            "text": ""
+        },
+        {
+            "companyId": 76,
+            "dataPrefixHex": "0215A495BB70C5B14B44B5121370F02D74DE",
+            "enabled": true,
+            "kind": "MANUFACTURER_DATA",
+            "radio": "BLE",
+            "text": ""
+        },
+        {
+            "companyId": 76,
+            "dataPrefixHex": "0215A495BB80C5B14B44B5121370F02D74DE",
+            "enabled": true,
+            "kind": "MANUFACTURER_DATA",
+            "radio": "BLE",
+            "text": ""
+        }
+    ],
+    "sequentialMac": false
+}

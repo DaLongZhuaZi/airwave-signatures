@@ -30,7 +30,8 @@ sh pipeline/build_all.sh   # 抓取 -> 合并构建 -> radiodb -> 校验
 2. **Theengs Decoder** 设备定义转换富化（`pipeline/converters/theengs.py`）；
 3. **小米 MiBeacon 产品表**（HA 生态 xiaomi-ble 的 DEVICE_TYPES）→ `fleet-mibeacon-*`；
 4. **IEEE 厂商 OUI**：为缺失的中国厂商新建 vendor fleet，并给大华/海康等过薄的已有 fleet 增补 OUI（`fleets/vendors.json`，匹配纪律见 `fleets/vendors.md`）；
-5. **手工 fleet**（`fleets/manual/*.json`）：协议级与国内特化特征，每条必须注明指纹出处。
+5. **社区型号表**：Flipper/Bruce 汇编的 Fast Pair 型号 ID、Apple Proximity 型号字、三星 EasySetup 型号字节与 BlueMaestro 类型表（`pipeline/converters/fastpair.py` 等）；
+6. **手工 fleet**（`fleets/manual/*.json`）：协议级与国内特化特征，每条必须注明指纹出处。
 
 ## 版本与发布纪律
 

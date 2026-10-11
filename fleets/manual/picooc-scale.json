@@ -1,0 +1,33 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-picooc-scale",
+    "kind": "HEALTH",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Picooc scale",
+    "notes": "Picooc (有品) body scales, broadcast name patterns from openScale's Picooc handler supportFor (GPL-3.0, patterns are factual).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "PICOOC*"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "Latin-*"
+        }
+    ],
+    "sequentialMac": false
+}

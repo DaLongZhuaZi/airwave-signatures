@@ -1,0 +1,49 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 3,
+    "enabled": true,
+    "id": "fleet-manual-ninebot",
+    "kind": "VEHICLE",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Ninebot / Segway scooter",
+    "notes": "Ninebot/Segway e-scooter BLE: names NBScooter*/Ninebot-*/S1D<serial>, plus a proprietary service UUID 6E400001-0000-0000-006E-696E65626F74 ('ninebot' embedded in hex). Sources: ninebot-ble scanner and M365-Rokid-HUD PROTOCOL_FAMILIES.md (MIT), via community protocol documentation.",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "NBScooter*"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "Ninebot-*"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "S1D*"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_UUID",
+            "radio": "BLE",
+            "text": "6E40000100000000006E696E65626F74"
+        }
+    ],
+    "sequentialMac": false
+}

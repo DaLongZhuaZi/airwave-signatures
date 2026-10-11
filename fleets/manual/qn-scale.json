@@ -1,0 +1,53 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-qn-scale",
+    "kind": "HEALTH",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "QN protocol scale",
+    "notes": "Scales speaking the QN protocol family (used by Qingniu/清牛 and many white-label brands): name contains 'qn-scale' AND advertises AE00 or FFE0. Source: openScale QN handler supportFor (GPL-3.0, facts only).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_CONTAINS",
+            "radio": "BLE",
+            "text": "qn-scale",
+            "group": 1
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_UUID",
+            "radio": "BLE",
+            "text": "AE00",
+            "group": 1
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_CONTAINS",
+            "radio": "BLE",
+            "text": "qn-scale",
+            "group": 2
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_UUID",
+            "radio": "BLE",
+            "text": "FFE0",
+            "group": 2
+        }
+    ],
+    "sequentialMac": false
+}

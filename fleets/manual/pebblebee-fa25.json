@@ -1,0 +1,25 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-pebblebee-fa25",
+    "kind": "FINDER",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Pebblebee (own network)",
+    "notes": "Pebblebee's own finder network service FA25. Complements the name-based Pebblebee fleet. Source: seemoo-lab/AirGuard tracker definitions (Apache-2.0).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_UUID",
+            "radio": "BLE",
+            "text": "FA25"
+        }
+    ],
+    "sequentialMac": false
+}

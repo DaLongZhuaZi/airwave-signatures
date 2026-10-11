@@ -1,0 +1,33 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-manual-coospo",
+    "kind": "WEARABLE",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Coospo bike computer",
+    "notes": "Coospo (酷动) GPS bike computers advertise as CS500-<serial> / CS600-<serial>, with custom services FDA1-FDA4. Source: community Coospo BLE protocol documentation (see data repo CANDIDATES notes).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "CS500-*"
+        },
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "CS600-*"
+        }
+    ],
+    "sequentialMac": false
+}

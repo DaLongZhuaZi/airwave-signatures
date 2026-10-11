@@ -1,0 +1,25 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 3,
+    "enabled": true,
+    "id": "fleet-manual-miscooter",
+    "kind": "VEHICLE",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "Xiaomi / Ninebot scooter (MIScooter)",
+    "notes": "Xiaomi/Ninebot e-scooters (M365 family) advertise as MIScooter<serial> and speak MiBeacon (FE95). Source: ninebot-ble scanner.rs (community protocol documentation).",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "NAME_GLOB",
+            "radio": "BLE",
+            "text": "MIScooter*"
+        }
+    ],
+    "sequentialMac": false
+}

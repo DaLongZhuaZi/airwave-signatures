@@ -43,6 +43,17 @@ FILES = {
     # Nordic 镜像的蓝牙编号库（BSD-3，含厂商服务段）
     "nordic-service_uuids.json":
         "https://raw.githubusercontent.com/NordicSemiconductor/bluetooth-numbers-database/master/v1/service_uuids.json",
+    # Flipper ble_spam（Momentum-Apps，GPL-3.0）：Fast Pair 型号表 + Samsung EasySetup 表
+    "fastpair.c":
+        "https://raw.githubusercontent.com/Next-Flip/Momentum-Apps/dev/ble_spam/protocols/fastpair.c",
+    "easysetup.c":
+        "https://raw.githubusercontent.com/Next-Flip/Momentum-Apps/dev/ble_spam/protocols/easysetup.c",
+    # Bruce 固件（GPL-3.0）：Apple Proximity Pairing 型号表
+    "bruce-ble-spam.cpp":
+        "https://raw.githubusercontent.com/BruceDevices/firmware/main/src/modules/ble/ble_spam.cpp",
+    # BlueMaestro 设备类型表（Bluetooth-Devices，MIT）
+    "bluemaestro-parser.py":
+        "https://raw.githubusercontent.com/Bluetooth-Devices/bluemaestro-ble/main/src/bluemaestro_ble/parser.py",
     # Wireshark manuf（仅作校验交叉参考，不直接进产物；抓不到不阻断构建）
     "manuf": "https://gitlab.com/wireshark/wireshark/-/raw/master/manuf",
     # 上一版 radiodb.bin（airwavefootprints 内置版）——仅用于原样保留来源未明的 cid 段

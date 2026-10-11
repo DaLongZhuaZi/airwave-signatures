@@ -57,3 +57,38 @@ sources:
     license: "GPL-2.0"
     role: "仅作 OUI 交叉校验参考，不直接进任何产物；抓取失败不阻断构建"
     fetch: ".cache/manuf (optional)"
+
+  - id: flipper-ble-spam
+    name: "Flipper Zero ble_spam app (Next-Flip/Momentum-Apps) protocol tables"
+    url: "https://github.com/Next-Flip/Momentum-Apps (ble_spam/protocols/fastpair.c, easysetup.c)"
+    license: "GPL-3.0 (community reverse-assembled identifier tables; converted rules are factual identifiers)"
+    role: "Fast Pair 型号 ID 表 -> fleet-fastpair-*；Samsung EasySetup 型号字节 -> fleet-easysetup-*（pipeline/converters/fastpair.py, samsung_easysetup.py）"
+    fetch: "raw .c files -> .cache/fastpair.c, .cache/easysetup.c"
+
+  - id: bruce-firmware
+    name: "Bruce firmware (BruceDevices/firmware) APPLE_PROXIMITY_DEVICES"
+    url: "https://github.com/BruceDevices/firmware (src/modules/ble/ble_spam.cpp)"
+    license: "GPL-3.0 (community table ported from Flipper ble_spam; converted rules are factual identifiers)"
+    role: "Apple Proximity Pairing 型号字 -> fleet-proximity-*（pipeline/converters/apple_proximity.py）"
+    fetch: "raw ble_spam.cpp -> .cache/bruce-ble-spam.cpp"
+
+  - id: bluemaestro-ble
+    name: "Bluetooth-Devices/bluemaestro-ble parser (Home Assistant ecosystem)"
+    url: "https://github.com/Bluetooth-Devices/bluemaestro-ble"
+    license: "MIT"
+    role: "BlueMaestro 设备类型字节 -> fleet-bluemaestro-*（pipeline/converters/bluemaestro.py）"
+    fetch: "raw parser.py -> .cache/bluemaestro-parser.py (regex 解析，不执行)"
+
+  - id: airguard
+    name: "seemoo-lab/AirGuard tracker definitions (TU Darmstadt)"
+    url: "https://github.com/seemoo-lab/AirGuard"
+    license: "Apache-2.0"
+    role: "追踪器识别数值出处（FD69/FE33/FA25 等手工 fleet 的 provenance；FMDN/Tile/SmartTag 经核对已由上游覆盖）"
+    fetch: "手工核对（fleets/manual/*.json 的 notes 逐条注明）"
+
+  - id: openscale
+    name: "oliexdev/openScale supported-scale handlers"
+    url: "https://github.com/oliexdev/openScale"
+    license: "GPL-3.0 (broadcast name patterns are factual)"
+    role: "体重秤广播名模式出处（云麦/Picooc/QN 手工 fleet）"
+    fetch: "手工核对（fleets/manual/*.json 的 notes 逐条注明）"

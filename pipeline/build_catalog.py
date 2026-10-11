@@ -20,7 +20,10 @@ ROOT = os.path.dirname(HERE)
 CACHE = os.path.join(HERE, '.cache')
 sys.path.insert(0, HERE)
 
-from converters import theengs, xiaomi_mibeacon, ieee_vendors, manual  # noqa: E402
+from converters import (  # noqa: E402
+    theengs, xiaomi_mibeacon, ieee_vendors, manual,
+    fastpair, apple_proximity, samsung_easysetup, bluemaestro,
+)
 
 
 def fleet_fingerprint(fleet):
@@ -121,7 +124,15 @@ def main():
             cn_fleet_ids.append(fleet_id)
     stats['ieee_vendors_augmented'] = augmented
 
-    # 阶段 4：手工 fleet（协议级 + 国内特化）
+    # 阶段 4：社区逆向汇编的配对/型号表（Flipper/Bruce/HA 生态，均为事实性编码表）
+    for stage_name, module in (('fastpair', fastpair), ('apple_proximity', apple_proximity),
+                               ('samsung_easysetup', samsung_easysetup),
+                               ('bluemaestro', bluemaestro)):
+        stage_fleets, stage_stats = module.convert(CACHE)
+        add_fleets(stage_fleets, stage_name)
+        stats[stage_name].update(stage_stats)
+
+    # 阶段 5：手工 fleet（协议级 + 国内特化）
     manual_fleets, manual_stats = manual.convert(os.path.join(ROOT, 'fleets', 'manual'))
     add_fleets(manual_fleets, 'manual', cn=True)
     stats['manual'].update(manual_stats)

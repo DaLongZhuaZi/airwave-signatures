@@ -1,9 +1,9 @@
 {
     "format": "fieldwatch-signatures",
     "formatVersion": 1,
-    "exportedAt": "2026-10-11T06:47:49Z",
+    "exportedAt": "2026-10-11T07:42:48Z",
     "appVersion": "stock",
-    "catalogVersion": 100,
+    "catalogVersion": 101,
     "fleets": [
         {
             "id": "fleet-dahua",
@@ -26797,6 +26797,64 @@
             "clusterByOui": false,
             "colorIndex": 4,
             "enabled": true,
+            "id": "fleet-manual-chipolo-fe33",
+            "kind": "FINDER",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Chipolo (own network)",
+            "notes": "Chipolo's own finder network service FE33 (Bluetooth SIG member registry: CHIPOLO d.o.o.). Complements the name-based Chipolo fleet for units broadcasting without a name. Source: seemoo-lab/AirGuard (Apache-2.0).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_UUID",
+                    "radio": "BLE",
+                    "text": "FE33"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-coospo",
+            "kind": "WEARABLE",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Coospo bike computer",
+            "notes": "Coospo (酷动) GPS bike computers advertise as CS500-<serial> / CS600-<serial>, with custom services FDA1-FDA4. Source: community Coospo BLE protocol documentation (see data repo CANDIDATES notes).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "CS500-*"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "CS600-*"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
             "id": "fleet-eddystone",
             "kind": "BEACON",
             "matchAny": true,
@@ -26822,6 +26880,39 @@
             "clusterByOui": false,
             "colorIndex": 4,
             "enabled": true,
+            "id": "fleet-manual-meross",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Meross",
+            "notes": "Meross devices in pairing mode advertise as Meross-<...> with service data UUID 0xBE30 (GATT service 99e7be30-...). Matching rules are the vendor org's own Home Assistant discovery criteria. Source: meross_rpc (MIT), Meross's official-org community repo.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "Meross-*"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_UUID",
+                    "radio": "BLE",
+                    "text": "BE30"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
             "id": "fleet-mibeacon-generic",
             "kind": "HOME",
             "matchAny": true,
@@ -26837,6 +26928,363 @@
                     "kind": "SERVICE_UUID",
                     "radio": "BLE",
                     "text": "FE95"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 3,
+            "enabled": true,
+            "id": "fleet-manual-miscooter",
+            "kind": "VEHICLE",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Xiaomi / Ninebot scooter (MIScooter)",
+            "notes": "Xiaomi/Ninebot e-scooters (M365 family) advertise as MIScooter<serial> and speak MiBeacon (FE95). Source: ninebot-ble scanner.rs (community protocol documentation).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "MIScooter*"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 3,
+            "enabled": true,
+            "id": "fleet-manual-ninebot",
+            "kind": "VEHICLE",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Ninebot / Segway scooter",
+            "notes": "Ninebot/Segway e-scooter BLE: names NBScooter*/Ninebot-*/S1D<serial>, plus a proprietary service UUID 6E400001-0000-0000-006E-696E65626F74 ('ninebot' embedded in hex). Sources: ninebot-ble scanner and M365-Rokid-HUD PROTOCOL_FAMILIES.md (MIT), via community protocol documentation.",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "NBScooter*"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "Ninebot-*"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "S1D*"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_UUID",
+                    "radio": "BLE",
+                    "text": "6E40000100000000006E696E65626F74"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-pebblebee-fa25",
+            "kind": "FINDER",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Pebblebee (own network)",
+            "notes": "Pebblebee's own finder network service FA25. Complements the name-based Pebblebee fleet. Source: seemoo-lab/AirGuard tracker definitions (Apache-2.0).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_UUID",
+                    "radio": "BLE",
+                    "text": "FA25"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-picooc-scale",
+            "kind": "HEALTH",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Picooc scale",
+            "notes": "Picooc (有品) body scales, broadcast name patterns from openScale's Picooc handler supportFor (GPL-3.0, patterns are factual).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "PICOOC*"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "Latin-*"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-qn-scale",
+            "kind": "HEALTH",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "QN protocol scale",
+            "notes": "Scales speaking the QN protocol family (used by Qingniu/清牛 and many white-label brands): name contains 'qn-scale' AND advertises AE00 or FFE0. Source: openScale QN handler supportFor (GPL-3.0, facts only).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_CONTAINS",
+                    "radio": "BLE",
+                    "text": "qn-scale",
+                    "group": 1
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_UUID",
+                    "radio": "BLE",
+                    "text": "AE00",
+                    "group": 1
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_CONTAINS",
+                    "radio": "BLE",
+                    "text": "qn-scale",
+                    "group": 2
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_UUID",
+                    "radio": "BLE",
+                    "text": "FFE0",
+                    "group": 2
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-samsung-offline-finding",
+            "kind": "FINDER",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Samsung Offline Finding",
+            "notes": "Protocol-level match: Samsung offline-finding network service FD69 (Bluetooth SIG member registry: Samsung Electronics). Broadcast by Galaxy phones participating in Samsung's offline finding network and by lost devices. Source: seemoo-lab/AirGuard tracker definitions (Apache-2.0).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_UUID",
+                    "radio": "BLE",
+                    "text": "FD69"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-tilt-hydrometer",
+            "kind": "HOME",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Tilt Hydrometer",
+            "notes": "Tilt brewing hydrometer: iBeacon (companyId 0x004C, 02 15) whose UUID A495BB<color>C5B1-4B44-B512-1370F02D74DE encodes the unit color (10 Red, 20 Green, 30 Black, 40 Purple, 50 Orange, 60 Blue, 70 Yellow, 80 Pink). Source: Bluetooth-Devices/tilt-ble (MIT).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 76,
+                    "dataPrefixHex": "0215A495BB10C5B14B44B5121370F02D74DE",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_DATA",
+                    "radio": "BLE",
+                    "text": ""
+                },
+                {
+                    "companyId": 76,
+                    "dataPrefixHex": "0215A495BB20C5B14B44B5121370F02D74DE",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_DATA",
+                    "radio": "BLE",
+                    "text": ""
+                },
+                {
+                    "companyId": 76,
+                    "dataPrefixHex": "0215A495BB30C5B14B44B5121370F02D74DE",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_DATA",
+                    "radio": "BLE",
+                    "text": ""
+                },
+                {
+                    "companyId": 76,
+                    "dataPrefixHex": "0215A495BB40C5B14B44B5121370F02D74DE",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_DATA",
+                    "radio": "BLE",
+                    "text": ""
+                },
+                {
+                    "companyId": 76,
+                    "dataPrefixHex": "0215A495BB50C5B14B44B5121370F02D74DE",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_DATA",
+                    "radio": "BLE",
+                    "text": ""
+                },
+                {
+                    "companyId": 76,
+                    "dataPrefixHex": "0215A495BB60C5B14B44B5121370F02D74DE",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_DATA",
+                    "radio": "BLE",
+                    "text": ""
+                },
+                {
+                    "companyId": 76,
+                    "dataPrefixHex": "0215A495BB70C5B14B44B5121370F02D74DE",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_DATA",
+                    "radio": "BLE",
+                    "text": ""
+                },
+                {
+                    "companyId": 76,
+                    "dataPrefixHex": "0215A495BB80C5B14B44B5121370F02D74DE",
+                    "enabled": true,
+                    "kind": "MANUFACTURER_DATA",
+                    "radio": "BLE",
+                    "text": ""
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-ttlock",
+            "kind": "LOCK",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "TTLock smart lock",
+            "notes": "TTLock (Sciener) smart locks advertise their primary service 0x1910; broadcast names look like <model>_<last 3 MAC bytes hex> (e.g. S534_1d22bd). The first two manufacturer-data bytes are a protocol header, not a company ID, so no MANUFACTURER_ID rule is used. Source: roquerodrigo/ttlock-ble (MIT).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "SERVICE_UUID",
+                    "radio": "BLE",
+                    "text": "1910"
+                }
+            ],
+            "sequentialMac": false
+        },
+        {
+            "attentionNote": "",
+            "builtIn": true,
+            "clusterByOui": false,
+            "colorIndex": 4,
+            "enabled": true,
+            "id": "fleet-manual-yunmai-scale",
+            "kind": "HEALTH",
+            "matchAny": true,
+            "minPeers": 0,
+            "name": "Yunmai scale",
+            "notes": "Yunmai (云麦) body scales, broadcast name patterns from openScale's Yunmai handler supportFor (GPL-3.0, patterns are factual). The generic ISM* prefix from the same handler is deliberately NOT included (too collision-prone).",
+            "peerWindowSec": 60,
+            "rules": [
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "YUNMAI-SIGNAL*"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "ISC2P*"
+                },
+                {
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "enabled": true,
+                    "kind": "NAME_GLOB",
+                    "radio": "BLE",
+                    "text": "ISSE*"
                 }
             ],
             "sequentialMac": false
