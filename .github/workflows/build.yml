@@ -1,0 +1,65 @@
+name: build-catalog
+
+# 每周一自动刷新：抓取全部来源 -> 构建 -> 校验 -> 开 PR（不自动合并，发布要过人眼）
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build all
+        run: sh pipeline/build_all.sh
+
+      - name: Bump catalog version if dist changed
+        id: diff
+        run: |
+          if git diff --quiet -- dist/fieldwatch-signatures-v2.json dist/radiodb.bin; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No data changes."
+            exit 0
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          V=$(cat pipeline/VERSION)
+          echo $((V + 1)) > pipeline/VERSION
+          python3 pipeline/build_catalog.py
+          python3 pipeline/validate_catalog.py
+
+      - name: Open update PR
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="data-update-$(date +%Y%m%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add dist pipeline/VERSION
+          git commit -m "data: weekly source refresh (catalog v$(cat pipeline/VERSION))"
+          git push origin "$BRANCH"
+          python3 - << 'EOF' > /tmp/pr-body.md
+          import json
+          m = json.load(open('dist/manifest.json'))
+          print('## Weekly data refresh\n')
+          print(f"- catalogVersion: **{m['catalogVersion']}**")
+          print(f"- catalog: {m['catalog']['fleets']} fleets / {m['catalog']['rules']} rules")
+          print(f"- radiodb sections: {m['radiodb']['sections']}")
+          print('\n### Per-source stats\n')
+          for stage, data in m['sources'].items():
+              print(f"- `{stage}`: {data}")
+          print('\n发布纪律：合并本 PR 即发布新版目录；过宽规则会造成全员误报，请先看 dist 的 diff。')
+          EOF
+          gh pr create --title "data: weekly refresh catalog v$(cat pipeline/VERSION)" \
+            --body-file /tmp/pr-body.md --base main --head "$BRANCH"

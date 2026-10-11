@@ -1,0 +1,25 @@
+{
+    "attentionNote": "",
+    "builtIn": true,
+    "clusterByOui": false,
+    "colorIndex": 4,
+    "enabled": true,
+    "id": "fleet-bthome",
+    "kind": "HOME",
+    "matchAny": true,
+    "minPeers": 0,
+    "name": "BTHome device",
+    "notes": "Protocol-level match: BTHome v2 advertisement (service UUID FCD2 in the Bluetooth SIG member registry, allocated to Allterco Robotics; BTHome spec at bthome.io). Common for DIY and flashed Xiaomi/Qingping sensors. Identifies the protocol, not a brand.",
+    "peerWindowSec": 60,
+    "rules": [
+        {
+            "companyId": 0,
+            "dataPrefixHex": "",
+            "enabled": true,
+            "kind": "SERVICE_UUID",
+            "radio": "BLE",
+            "text": "FCD2"
+        }
+    ],
+    "sequentialMac": false
+}

@@ -1,0 +1,406 @@
+{
+  "builtAt": "2026-10-11T06:47:49Z",
+  "catalogVersion": 100,
+  "catalog": {
+    "file": "fieldwatch-signatures-v2.json",
+    "fleets": 499,
+    "rules": 10263,
+    "sha256": "616d9c7a07f27b9b117a15c1a7abf24b855bd17360d2c747b69dfb751eb2ed94"
+  },
+  "cnPack": {
+    "file": "cn-pack.json",
+    "fleets": 128,
+    "sha256": "cd9f08243eecc91abb305fe4af054dc6b365127672a53521f3cd02fd600cb08e"
+  },
+  "sources": {
+    "upstream": {
+      "catalogVersion": 94,
+      "fleets": 254
+    },
+    "theengs": {
+      "added": 123,
+      "devices_parsed": 151,
+      "skipped_existing_or_covered": 11,
+      "skipped_unexpressible": 17
+    },
+    "xiaomi_mibeacon": {
+      "added": 82,
+      "product_ids": 92,
+      "fleets": 82
+    },
+    "ieee_vendors_new": {
+      "added": 38
+    },
+    "ieee_vendors": {
+      "vendors": {
+        "Honor": {
+          "oui_count": 64,
+          "org_names": [
+            "Honor Device Co., Ltd."
+          ]
+        },
+        "OPPO": {
+          "oui_count": 191,
+          "org_names": [
+            "GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD",
+            "OPPO Digital, Inc."
+          ]
+        },
+        "vivo": {
+          "oui_count": 170,
+          "org_names": [
+            "vivo Mobile Communication Co., Ltd."
+          ]
+        },
+        "Realme": {
+          "oui_count": 64,
+          "org_names": [
+            "Realme Chongqing Mobile Telecommunications Corp.,Ltd.",
+            "Realme Chongqing MobileTelecommunications Corp Ltd"
+          ]
+        },
+        "OnePlus": {
+          "oui_count": 21,
+          "org_names": [
+            "OnePlus Electronics (Shenzhen) Co., Ltd.",
+            "OnePlus Tech (Shenzhen) Ltd",
+            "OnePlus Technology (Shenzhen) Co., Ltd"
+          ]
+        },
+        "Meizu": {
+          "oui_count": 4,
+          "org_names": [
+            "MEIZU Technology Co., Ltd.",
+            "MEIZU Technology Co.,Ltd."
+          ]
+        },
+        "ZTE": {
+          "oui_count": 502,
+          "org_names": [
+            "zte corporation"
+          ]
+        },
+        "Nubia": {
+          "oui_count": 2,
+          "org_names": [
+            "Nubia Technology Co.,Ltd."
+          ]
+        },
+        "Lenovo": {
+          "oui_count": 30,
+          "org_names": [
+            "LENOVO(BEIJING)CO., LTD.",
+            "Lenovo",
+            "Lenovo (Beijing) Co., Ltd.",
+            "Lenovo (Beijing) Limited.",
+            "Lenovo Future Communication Technology (Chongqing) Company Limited",
+            "Lenovo Information Products (Shenzhen)Co.,Ltd",
+            "Lenovo Mobile Communication (Wuhan) Company Limited",
+            "Lenovo Mobile Communication Technology Ltd.",
+            "LenovoEMC Products USA, LLC",
+            "Notebook Development Lab.  Lenovo Japan Ltd.",
+            "Vuzix / Lenovo"
+          ]
+        },
+        "Motorola": {
+          "oui_count": 128,
+          "org_names": [
+            "Motorola Mobility LLC, a Lenovo Company"
+          ]
+        },
+        "Xiaomi": {
+          "oui_count": 343,
+          "org_names": [
+            "Beijing Xiaomi Electronics Co., Ltd.",
+            "Beijing Xiaomi Electronics Co.,Ltd",
+            "Beijing Xiaomi Mobile Software Co., Ltd",
+            "XIAOMI Electronics,CO.,LTD",
+            "Xiaomi Communications Co Ltd"
+          ]
+        },
+        "Aqara / Lumi": {
+          "oui_count": 2,
+          "org_names": [
+            "Lumi United Technology Co., Ltd"
+          ]
+        },
+        "Yeelight / Yeelink": {
+          "oui_count": 1,
+          "org_names": [
+            "Yeelink"
+          ]
+        },
+        "Roborock": {
+          "oui_count": 3,
+          "org_names": [
+            "Beijing Roborock Technology Co., Ltd."
+          ]
+        },
+        "Dreame": {
+          "oui_count": 2,
+          "org_names": [
+            "Dreame Technology (Suzhou) Limited"
+          ]
+        },
+        "Midea": {
+          "oui_count": 54,
+          "org_names": [
+            "GD Midea Air-Conditioning Equipment Co.,Ltd.",
+            "Midea Group Co., Ltd."
+          ]
+        },
+        "Haier": {
+          "oui_count": 33,
+          "org_names": [
+            "Beijing Haier IC Design Co.,Ltd",
+            "Haier",
+            "Haier Group Technologies Ltd",
+            "QING DAO HAIER TELECOM CO.,LTD.",
+            "Qingdao Haier Intelligent Home Appliance Technology Co.,Ltd",
+            "Qingdao Haier Multimedia Limited.",
+            "Qingdao Haier Technology Co.,Ltd",
+            "Qingdao Haier Technology Co.Ltd",
+            "Qingdao HaierTechnology Co.,Ltd"
+          ]
+        },
+        "Gree": {
+          "oui_count": 6,
+          "org_names": [
+            "GREE ELECTRIC APPLIANCES, INC. OF ZHUHAI"
+          ]
+        },
+        "Hisense": {
+          "oui_count": 41,
+          "org_names": [
+            "HISENSE ELECTRIC CO.,LTD",
+            "HISENSE VISUAL TECHNOLOGY CO.,LTD",
+            "Hisense Broadband Multimedia Technology Co.,Ltd.",
+            "Hisense Electric Co.,Ltd",
+            "Hisense Home Appliances Group Co., Ltd. Qingdao Branch",
+            "Hisense Mobile Communications Technoligy Co.,Ltd.",
+            "Hisense broadband multimedia technology Co.,Ltd",
+            "Qingdao Hisense Communications Co.,Ltd.",
+            "Qingdao Hisense Electronics Co.,Ltd.",
+            "Qingdao Hisense Mobile Communication Technology Co,Ltd",
+            "Qingdao Hisense Smart Life Technology Co., Ltd"
+          ]
+        },
+        "TCL": {
+          "oui_count": 25,
+          "org_names": [
+            "HUIZHOU TCL COMMUNICATION ELECTRON CO.,LTD",
+            "Shenzhen TCL New Technology Co., Ltd",
+            "TCL INCORPORATED",
+            "TCL King Electrical Appliances (Huizhou) Co., Ltd",
+            "TCL King Electrical Appliances(Huizhou)Co.,Ltd",
+            "TCL MOKA International Limited",
+            "TCL Networks Equipment Co., Ltd.",
+            "TCL Technoly Electronics (Huizhou) Co., Ltd.",
+            "TCL Yuxin Zhixing Technology (Huizhou) Co.,Ltd"
+          ]
+        },
+        "Skyworth": {
+          "oui_count": 85,
+          "org_names": [
+            "Shenzhen Skyworth Digital  Technology  CO., Ltd",
+            "Shenzhen Skyworth Display Technologies Co.,Ltd",
+            "Shenzhen Skyworth Wireless Technology Co.,Ltd",
+            "Skyworth Digital Technology(Shenzhen) Co.,Ltd",
+            "Skyworth Overseas Development Ltd.",
+            "Skyworth Wireless Technology Ltd."
+          ]
+        },
+        "Konka": {
+          "oui_count": 4,
+          "org_names": [
+            "Konka Group Co., Ltd.",
+            "ShenZhen Konka Telecommunication Technology Co.,Ltd"
+          ]
+        },
+        "Changhong": {
+          "oui_count": 15,
+          "org_names": [
+            "CHANGHONG (HONGKONG) TRADING LIMITED",
+            "Sichuan Changhong Electric Ltd.",
+            "Sichuan Changhong Network Technologies Co., Ltd."
+          ]
+        },
+        "FiberHome": {
+          "oui_count": 220,
+          "org_names": [
+            "Fiberhome Telecommunication Technologies Co.,LTD",
+            "Wuhan FiberHome Digital Technology Co.,Ltd."
+          ]
+        },
+        "Mercury": {
+          "oui_count": 28,
+          "org_names": [
+            "MERCURY COMMUNICATION TECHNOLOGIES CO.,LTD.",
+            "SHENZHEN MERCURY COMMUNICATION TECHNOLOGIES CO.,LTD."
+          ]
+        },
+        "FAST": {
+          "oui_count": 17,
+          "org_names": [
+            "SHENZHEN FAST TECHNOLOGIES CO.,LTD"
+          ]
+        },
+        "H3C": {
+          "oui_count": 174,
+          "org_names": [
+            "Hangzhou H3C Technologies Co., Limited",
+            "New H3C Intelligence Terminal Co., Ltd.",
+            "New H3C Technologies Co., Ltd"
+          ]
+        },
+        "Qihoo 360": {
+          "oui_count": 4,
+          "org_names": [
+            "360 AI Technology Co.Ltd",
+            "Qihoo  360  Technology Co.,Ltd",
+            "Shenzhen Qihoo Intelligent Technology Co.,Ltd"
+          ]
+        },
+        "EZVIZ": {
+          "oui_count": 15,
+          "org_names": [
+            "Hangzhou Ezviz Software Co.,Ltd."
+          ]
+        },
+        "Anker": {
+          "oui_count": 6,
+          "org_names": [
+            "Fantasia Trading LLC"
+          ]
+        },
+        "Baseus": {
+          "oui_count": 2,
+          "org_names": [
+            "Shenzhen Baseus Technology Co., Ltd.",
+            "Shenzhen Baseus Technology CoLtd"
+          ]
+        },
+        "UGREEN": {
+          "oui_count": 2,
+          "org_names": [
+            "Ugreen Group Limited"
+          ]
+        },
+        "Broadlink": {
+          "oui_count": 9,
+          "org_names": [
+            "Broadlink Pty Ltd",
+            "Hangzhou BroadLink Technology Co., Ltd",
+            "Hangzhou BroadLink Technology Co.,Ltd"
+          ]
+        },
+        "Narwal / Yunjing": {
+          "oui_count": 1,
+          "org_names": [
+            "Yunjing lntelligent Technology(Dongguan).,Ltd"
+          ]
+        },
+        "Xiaotiancai / BBK": {
+          "oui_count": 7,
+          "org_names": [
+            "BBK EDUCATIONAL ELECTRONICS CORP.,LTD."
+          ]
+        },
+        "NIO": {
+          "oui_count": 1,
+          "org_names": [
+            "NIO Co., Ltd."
+          ]
+        },
+        "Espressif module": {
+          "oui_count": 360,
+          "org_names": [
+            "Espressif Inc.",
+            "Espressif Systems (Singapore) Pte. Ltd"
+          ]
+        },
+        "Quectel module": {
+          "oui_count": 74,
+          "org_names": [
+            "Quectel Wireless Solutions Co.,Ltd."
+          ]
+        },
+        "Dahua (augment)": {
+          "oui_count": 33,
+          "org_names": [
+            "ZHEJIANG DAHUA TECHNOLOGYCO.,LTD",
+            "ZHEJIANG DAHUA ZHILIAN CO.,LTD",
+            "Zhejiang Dahua Technology Co., Ltd."
+          ]
+        },
+        "Hikvision (augment)": {
+          "oui_count": 86,
+          "org_names": [
+            "Hangzhou Hikvision Digital Technology Co.,Ltd.",
+            "Prama Hikvision India Private Limited"
+          ]
+        },
+        "Uniview (augment)": {
+          "oui_count": 5,
+          "org_names": [
+            "Zhejiang Uniview Technologies Co., Ltd.",
+            "Zhejiang Uniview Technologies Co.,Ltd."
+          ]
+        },
+        "Tuya (augment)": {
+          "oui_count": 42,
+          "org_names": [
+            "Tuya Smart Inc."
+          ]
+        },
+        "DJI (augment)": {
+          "oui_count": 16,
+          "org_names": [
+            "DJI BAIWANG TECHNOLOGY CO LTD",
+            "DJI Osmo Technology Co., Ltd.",
+            "SZ DJI Ronin Technology Co., Ltd.",
+            "SZ DJI TECHNOLOGY CO.,LTD"
+          ]
+        },
+        "Insta360 (augment)": {
+          "oui_count": 1,
+          "org_names": [
+            "Arashi Vision Inc."
+          ]
+        }
+      },
+      "augmented_fleets": {
+        "fleet-dahua": 33,
+        "fleet-hikvision": 86,
+        "fleet-tuya": 42,
+        "fleet-dji": 16,
+        "fleet-insta360": 1
+      },
+      "skipped_existing_fleet": []
+    },
+    "ieee_vendors_augmented": {
+      "fleet-dahua": 33,
+      "fleet-hikvision": 86,
+      "fleet-tuya": 42,
+      "fleet-dji": 16,
+      "fleet-insta360": 1
+    },
+    "manual": {
+      "added": 3,
+      "manual_fleets": 3
+    }
+  },
+  "radiodb": {
+    "file": "radiodb.bin",
+    "builtYmd": 20261011,
+    "sections": {
+      "mal": 40319,
+      "cid": 218,
+      "long": 13854,
+      "btc": 4047,
+      "app": 342,
+      "uuid": 793
+    },
+    "sha256": "37828e9529909a6c81a23430b88bd24e17b4e10bbcff52c83fe731a1d6bd2617"
+  }
+}

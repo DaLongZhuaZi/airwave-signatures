@@ -1,0 +1,59 @@
+# 来源清单：每一项都注明抓取方式、许可证与在产物中的角色。
+# 构建脚本只从这里列出的地址抓取；新增来源先补这一份清单再写转换器。
+
+sources:
+  - id: upstream-fieldwatch
+    name: "OffGridPete/Fieldwatch (Android) stock catalog"
+    url: "https://raw.githubusercontent.com/OffGridPete/Fieldwatch/main/dist/fieldwatch-signatures-v2.json"
+    license: "MIT"
+    role: "签名目录基底（全量透传，随后各阶段富化）"
+    fetch: "pipeline/fetch_sources.py -> .cache/upstream-catalog.json"
+
+  - id: theengs-decoder
+    name: "Theengs Decoder device definitions"
+    url: "https://github.com/theengs/decoder (src/devices/*.h)"
+    license: "GPL-3.0 (device definition data; converted rules are factual identifiers)"
+    role: "BLE 设备指纹富化（pipeline/converters/theengs.py）"
+    fetch: "GitHub contents API listing + raw .h files -> .cache/theengs-devices/"
+
+  - id: xiaomi-ble
+    name: "Bluetooth-Devices/xiaomi-ble DEVICE_TYPES (Home Assistant ecosystem)"
+    url: "https://github.com/Bluetooth-Devices/xiaomi-ble"
+    license: "MIT"
+    role: "小米 MiBeacon 产品 ID 表 -> fleet-mibeacon-*（pipeline/converters/xiaomi_mibeacon.py）"
+    fetch: "raw devices.py -> .cache/xiaomi-ble-devices.py (ast 解析，不执行)"
+
+  - id: ieee-oui
+    name: "IEEE Registration Authority MA-L / MA-M / MA-S"
+    url: "https://standards-oui.ieee.org/"
+    license: "Public factual registry"
+    role: "radiodb 的 mal/long 段 + 厂商 OUI fleet 生成/增补（pipeline/converters/ieee_vendors.py）"
+    fetch: "oui.csv / mam.csv / oui36.csv（须带浏览器 UA，否则 HTTP 418）"
+
+  - id: bluetooth-sig-assigned-numbers
+    name: "Bluetooth SIG Assigned Numbers (company IDs, appearance, service UUIDs incl. member UUIDs)"
+    url: "https://bitbucket.org/bluetooth-SIG/public"
+    license: "Bluetooth SIG proprietary document; only factual number->name pairs are compiled into radiodb (no document text is redistributed)"
+    role: "radiodb 的 btc/app/uuid 段"
+    fetch: "service_uuids.yaml / member_uuids.yaml / company_identifiers.yaml / appearance_values.yaml"
+
+  - id: nordic-bluetooth-numbers
+    name: "Nordic Semiconductor bluetooth-numbers-database"
+    url: "https://github.com/NordicSemiconductor/bluetooth-numbers-database"
+    license: "BSD-3-Clause"
+    role: "radiodb uuid 段补漏（SIG 两表之后并入，命名以 SIG 为准）"
+    fetch: "v1/service_uuids.json"
+
+  - id: manual-fleets
+    name: "Hand-curated fleets in this repo (fleets/manual/*.json, fleets/vendors.json)"
+    url: "this repository"
+    license: "MIT"
+    role: "协议级特征（MiBeacon/BTHome/Eddystone）与国内厂商 OUI 精选；每条必须在文件内注明出处"
+    fetch: "local files"
+
+  - id: wireshark-manuf
+    name: "Wireshark manuf (reference only)"
+    url: "https://gitlab.com/wireshark/wireshark/-/raw/master/manuf"
+    license: "GPL-2.0"
+    role: "仅作 OUI 交叉校验参考，不直接进任何产物；抓取失败不阻断构建"
+    fetch: ".cache/manuf (optional)"
