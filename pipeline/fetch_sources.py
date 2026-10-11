@@ -57,13 +57,25 @@ def fetch(url: str, path: str) -> str:
     if os.path.exists(path) and os.path.getsize(path) > 0:
         return path
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=180) as resp:
-        data = resp.read()
-    with open(path, "wb") as fh:
-        fh.write(data)
-    sys.stderr.write(f"  fetched {os.path.basename(path)} ({len(data)} bytes)\n")
-    return path
+    # 3 次重试：个别源站会临时 refuse 云厂商 IP（如 IEEE 对 GitHub runner），
+    # 退避后通常可达；仍失败才向上抛错让本次构建显式失败（不静默用旧数据）。
+    import time
+    last_exc: Exception | None = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                data = resp.read()
+            with open(path, "wb") as fh:
+                fh.write(data)
+            sys.stderr.write(f"  fetched {os.path.basename(path)} ({len(data)} bytes)\n")
+            return path
+        except Exception as exc:
+            last_exc = exc
+            sys.stderr.write(f"  WARN: fetch {os.path.basename(path)} attempt {attempt + 1}/3 failed: {exc}\n")
+            if attempt < 2:
+                time.sleep(5 * (attempt + 1))
+    raise last_exc if last_exc else RuntimeError("fetch failed: " + url)
 
 
 def fetch_theengs(cache: str) -> int:
