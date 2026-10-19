@@ -1,9 +1,9 @@
 {
     "format": "fieldwatch-signatures",
     "formatVersion": 1,
-    "exportedAt": "2026-10-11T07:50:53Z",
+    "exportedAt": "2026-10-19T08:51:44Z",
     "appVersion": "stock",
-    "catalogVersion": 102,
+    "catalogVersion": 103,
     "fleets": [
         {
             "id": "fleet-dahua",
@@ -376,6 +376,14 @@
                 {
                     "kind": "OUI",
                     "text": "20:1F:55",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "24:91:23",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -1827,6 +1835,32 @@
             }
         },
         {
+            "id": "fleet-mibeacon-afwxkg220000",
+            "name": "LineHope AFWXKG220000",
+            "enabled": true,
+            "matchAny": true,
+            "colorIndex": 4,
+            "rules": [
+                {
+                    "kind": "SERVICE_DATA",
+                    "text": "FE95",
+                    "companyId": 0,
+                    "dataPrefixHex": "A378",
+                    "radio": "BLE",
+                    "enabled": true,
+                    "offset": 2
+                }
+            ],
+            "minPeers": 0,
+            "peerWindowSec": 60,
+            "clusterByOui": false,
+            "sequentialMac": false,
+            "notes": "MiBeacon product 0x78A3 (Wireless Switch). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
+            "attentionNote": "",
+            "builtIn": true,
+            "kind": "HOME"
+        },
+        {
             "id": "fleet-mibeacon-es3",
             "name": "Linptech ES3",
             "enabled": true,
@@ -2874,13 +2908,22 @@
                     "radio": "BLE",
                     "enabled": true,
                     "offset": 2
+                },
+                {
+                    "kind": "SERVICE_DATA",
+                    "text": "FE95",
+                    "companyId": 0,
+                    "dataPrefixHex": "C24F",
+                    "radio": "BLE",
+                    "enabled": true,
+                    "offset": 2
                 }
             ],
             "minPeers": 0,
             "peerWindowSec": 60,
             "clusterByOui": false,
             "sequentialMac": false,
-            "notes": "MiBeacon product 0x30D9, 0x3BD5, 0x48CF (Body Composition Scale). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
+            "notes": "MiBeacon product 0x30D9, 0x3BD5, 0x48CF, 0x4FC2 (Body Composition Scale). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
             "attentionNote": "",
             "builtIn": true,
             "kind": "HEALTH"
@@ -4018,6 +4061,32 @@
             "clusterByOui": false,
             "sequentialMac": false,
             "notes": "MiBeacon product 0x09B0 (Safe Box). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
+            "attentionNote": "",
+            "builtIn": true,
+            "kind": "HOME"
+        },
+        {
+            "id": "fleet-mibeacon-zhiee-flood-sj01",
+            "name": "Xiaomi zhiee.flood.sj01",
+            "enabled": true,
+            "matchAny": true,
+            "colorIndex": 4,
+            "rules": [
+                {
+                    "kind": "SERVICE_DATA",
+                    "text": "FE95",
+                    "companyId": 0,
+                    "dataPrefixHex": "1277",
+                    "radio": "BLE",
+                    "enabled": true,
+                    "offset": 2
+                }
+            ],
+            "minPeers": 0,
+            "peerWindowSec": 60,
+            "clusterByOui": false,
+            "sequentialMac": false,
+            "notes": "MiBeacon product 0x7712 (Water Leak Sensor). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
             "attentionNote": "",
             "builtIn": true,
             "kind": "HOME"
@@ -9431,6 +9500,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "48:13:18",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "48:28:2F",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -10247,6 +10324,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "7C:86:F3",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "7C:B3:0A",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -10688,6 +10773,14 @@
                 {
                     "kind": "OUI",
                     "text": "98:6C:F5",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "98:98:91",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -16809,6 +16902,14 @@
                 {
                     "kind": "OUI",
                     "text": "38:2F:B0",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "38:B9:B2",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -23549,6 +23650,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "1C:64:65",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "1C:69:20",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -23646,6 +23755,14 @@
                 {
                     "kind": "OUI",
                     "text": "20:D5:C2",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "20:E5:A4",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -23998,6 +24115,14 @@
                 {
                     "kind": "OUI",
                     "text": "3C:DC:75",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "3C:E2:55",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -24446,6 +24571,14 @@
                 {
                     "kind": "OUI",
                     "text": "6C:B4:56",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "6C:C4:AF",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -25150,6 +25283,14 @@
                 {
                     "kind": "OUI",
                     "text": "A4:E5:7C",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "A4:E9:72",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -25942,6 +26083,14 @@
                 {
                     "kind": "OUI",
                     "text": "E8:DB:84",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "E8:ED:BD",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
