@@ -1,20 +1,20 @@
 {
-  "builtAt": "2026-10-11T07:50:53Z",
-  "catalogVersion": 102,
+  "builtAt": "2026-10-19T08:51:44Z",
+  "catalogVersion": 103,
   "catalog": {
     "file": "fieldwatch-signatures-v2.json",
-    "fleets": 611,
-    "rules": 10958,
-    "sha256": "400648333793cef7c086ae3c5da6c969ba4fdccde363264b41f56e7b1cda7f78"
+    "fleets": 613,
+    "rules": 10972,
+    "sha256": "ca51e84e75bce935d013a6a223e5cbdca5c34f35225755bff888d01aa95d41ad"
   },
   "cnPack": {
     "file": "cn-pack.json",
-    "fleets": 152,
-    "sha256": "6be4c2dab9f91071de78583848635d525fe70ae61fae53aef0d8fea6e7be15d9"
+    "fleets": 154,
+    "sha256": "beb4ea870e82af84809f62c97615a0ed6ddec636e1e251a098c96f51eb5d88ff"
   },
   "sources": {
     "upstream": {
-      "catalogVersion": 94,
+      "catalogVersion": 95,
       "fleets": 254
     },
     "theengs": {
@@ -24,9 +24,9 @@
       "skipped_unexpressible": 17
     },
     "xiaomi_mibeacon": {
-      "added": 82,
-      "product_ids": 92,
-      "fleets": 82
+      "added": 84,
+      "product_ids": 95,
+      "fleets": 84
     },
     "ieee_vendors_new": {
       "added": 38
@@ -75,7 +75,7 @@
           ]
         },
         "ZTE": {
-          "oui_count": 502,
+          "oui_count": 505,
           "org_names": [
             "zte corporation"
           ]
@@ -143,7 +143,7 @@
           ]
         },
         "Midea": {
-          "oui_count": 54,
+          "oui_count": 55,
           "org_names": [
             "GD Midea Air-Conditioning Equipment Co.,Ltd.",
             "Midea Group Co., Ltd."
@@ -313,7 +313,7 @@
           ]
         },
         "Espressif module": {
-          "oui_count": 360,
+          "oui_count": 366,
           "org_names": [
             "Espressif Inc.",
             "Espressif Systems (Singapore) Pte. Ltd"
@@ -354,7 +354,7 @@
           ]
         },
         "DJI (augment)": {
-          "oui_count": 16,
+          "oui_count": 17,
           "org_names": [
             "DJI BAIWANG TECHNOLOGY CO LTD",
             "DJI Osmo Technology Co., Ltd.",
@@ -373,7 +373,7 @@
         "fleet-dahua": 33,
         "fleet-hikvision": 86,
         "fleet-tuya": 42,
-        "fleet-dji": 16,
+        "fleet-dji": 17,
         "fleet-insta360": 1
       },
       "skipped_existing_fleet": []
@@ -382,7 +382,7 @@
       "fleet-dahua": 33,
       "fleet-hikvision": 86,
       "fleet-tuya": 42,
-      "fleet-dji": 16,
+      "fleet-dji": 17,
       "fleet-insta360": 1
     },
     "fastpair": {
@@ -430,15 +430,15 @@
   },
   "radiodb": {
     "file": "radiodb.bin",
-    "builtYmd": 20261011,
+    "builtYmd": 20261019,
     "sections": {
-      "mal": 40319,
+      "mal": 40347,
       "cid": 221,
-      "long": 13854,
-      "btc": 4047,
+      "long": 13876,
+      "btc": 4049,
       "app": 342,
-      "uuid": 793
+      "uuid": 798
     },
-    "sha256": "88d4236679a3e01edc03f14b2391c91807b07de7e4c87693b2b17a3a00844f6b"
+    "sha256": "e85d28765772b087667c68252f2272dc8dfe6eb334d7b6fde76fd75ee70ecf96"
   }
 }
