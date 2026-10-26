@@ -1,21 +1,21 @@
 {
-  "builtAt": "2026-10-11T07:50:53Z",
-  "catalogVersion": 102,
+  "builtAt": "2026-10-26T08:54:22Z",
+  "catalogVersion": 103,
   "catalog": {
     "file": "fieldwatch-signatures-v2.json",
-    "fleets": 611,
-    "rules": 10958,
-    "sha256": "400648333793cef7c086ae3c5da6c969ba4fdccde363264b41f56e7b1cda7f78"
+    "fleets": 614,
+    "rules": 10983,
+    "sha256": "7c0c1fc97137f86e15de1df415817010b63a6cadc46aa573cdbe33d53e36c7cd"
   },
   "cnPack": {
     "file": "cn-pack.json",
-    "fleets": 152,
-    "sha256": "6be4c2dab9f91071de78583848635d525fe70ae61fae53aef0d8fea6e7be15d9"
+    "fleets": 154,
+    "sha256": "e0d4b6ee2c28d6b803a4dda22d5b5ed4b5567888b39c0022aed0dc568d6a0f36"
   },
   "sources": {
     "upstream": {
-      "catalogVersion": 94,
-      "fleets": 254
+      "catalogVersion": 97,
+      "fleets": 255
     },
     "theengs": {
       "added": 123,
@@ -24,9 +24,9 @@
       "skipped_unexpressible": 17
     },
     "xiaomi_mibeacon": {
-      "added": 82,
-      "product_ids": 92,
-      "fleets": 82
+      "added": 84,
+      "product_ids": 95,
+      "fleets": 84
     },
     "ieee_vendors_new": {
       "added": 38
@@ -75,7 +75,7 @@
           ]
         },
         "ZTE": {
-          "oui_count": 502,
+          "oui_count": 505,
           "org_names": [
             "zte corporation"
           ]
@@ -103,7 +103,7 @@
           ]
         },
         "Motorola": {
-          "oui_count": 128,
+          "oui_count": 130,
           "org_names": [
             "Motorola Mobility LLC, a Lenovo Company"
           ]
@@ -143,7 +143,7 @@
           ]
         },
         "Midea": {
-          "oui_count": 54,
+          "oui_count": 55,
           "org_names": [
             "GD Midea Air-Conditioning Equipment Co.,Ltd.",
             "Midea Group Co., Ltd."
@@ -313,7 +313,7 @@
           ]
         },
         "Espressif module": {
-          "oui_count": 360,
+          "oui_count": 372,
           "org_names": [
             "Espressif Inc.",
             "Espressif Systems (Singapore) Pte. Ltd"
@@ -354,7 +354,7 @@
           ]
         },
         "DJI (augment)": {
-          "oui_count": 16,
+          "oui_count": 17,
           "org_names": [
             "DJI BAIWANG TECHNOLOGY CO LTD",
             "DJI Osmo Technology Co., Ltd.",
@@ -373,7 +373,7 @@
         "fleet-dahua": 33,
         "fleet-hikvision": 86,
         "fleet-tuya": 42,
-        "fleet-dji": 16,
+        "fleet-dji": 17,
         "fleet-insta360": 1
       },
       "skipped_existing_fleet": []
@@ -382,7 +382,7 @@
       "fleet-dahua": 33,
       "fleet-hikvision": 86,
       "fleet-tuya": 42,
-      "fleet-dji": 16,
+      "fleet-dji": 17,
       "fleet-insta360": 1
     },
     "fastpair": {
@@ -430,15 +430,15 @@
   },
   "radiodb": {
     "file": "radiodb.bin",
-    "builtYmd": 20261011,
+    "builtYmd": 20261026,
     "sections": {
-      "mal": 40319,
-      "cid": 221,
-      "long": 13854,
-      "btc": 4047,
+      "mal": 40397,
+      "cid": 222,
+      "long": 13895,
+      "btc": 4057,
       "app": 342,
-      "uuid": 793
+      "uuid": 800
     },
-    "sha256": "88d4236679a3e01edc03f14b2391c91807b07de7e4c87693b2b17a3a00844f6b"
+    "sha256": "6d443f2327fd188e73d437b94a76c6d836f9bdf504f1cf6d32340335062129fa"
   }
 }
