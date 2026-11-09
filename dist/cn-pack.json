@@ -1,9 +1,9 @@
 {
     "format": "fieldwatch-signatures",
     "formatVersion": 1,
-    "exportedAt": "2026-10-11T07:50:53Z",
+    "exportedAt": "2026-11-09T11:29:39Z",
     "appVersion": "stock",
-    "catalogVersion": 102,
+    "catalogVersion": 103,
     "fleets": [
         {
             "id": "fleet-dahua",
@@ -358,6 +358,14 @@
                     "enabled": true
                 },
                 {
+                    "kind": "VENDOR_IE_OUI",
+                    "text": "26:37:12",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": null,
+                    "enabled": true
+                },
+                {
                     "kind": "OUI",
                     "text": "04:A8:5A",
                     "companyId": 0,
@@ -376,6 +384,14 @@
                 {
                     "kind": "OUI",
                     "text": "20:1F:55",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "24:91:23",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -490,7 +506,7 @@
             "peerWindowSec": 60,
             "clusterByOui": false,
             "sequentialMac": false,
-            "notes": "DJI aircraft, controller, or setup Wi-Fi. Handheld Osmo cameras are the Osmo row. Power stations named Power2000 are the DJI Power row. In-flight digital license plate is the Remote ID row.",
+            "notes": "DJI aircraft, controller, or setup Wi-Fi. Handheld Osmo cameras are the Osmo row. Power stations named Power2000 are the DJI Power row. The older DroneID beacon, vendor IE 26:37:12, labels this row and does not fill a position. In-flight ASTM Remote ID is the Remote ID row.",
             "attentionNote": "",
             "builtIn": true,
             "kind": "DRONE",
@@ -1827,6 +1843,32 @@
             }
         },
         {
+            "id": "fleet-mibeacon-afwxkg220000",
+            "name": "LineHope AFWXKG220000",
+            "enabled": true,
+            "matchAny": true,
+            "colorIndex": 4,
+            "rules": [
+                {
+                    "kind": "SERVICE_DATA",
+                    "text": "FE95",
+                    "companyId": 0,
+                    "dataPrefixHex": "A378",
+                    "radio": "BLE",
+                    "enabled": true,
+                    "offset": 2
+                }
+            ],
+            "minPeers": 0,
+            "peerWindowSec": 60,
+            "clusterByOui": false,
+            "sequentialMac": false,
+            "notes": "MiBeacon product 0x78A3 (Wireless Switch). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
+            "attentionNote": "",
+            "builtIn": true,
+            "kind": "HOME"
+        },
+        {
             "id": "fleet-mibeacon-es3",
             "name": "Linptech ES3",
             "enabled": true,
@@ -2874,13 +2916,22 @@
                     "radio": "BLE",
                     "enabled": true,
                     "offset": 2
+                },
+                {
+                    "kind": "SERVICE_DATA",
+                    "text": "FE95",
+                    "companyId": 0,
+                    "dataPrefixHex": "C24F",
+                    "radio": "BLE",
+                    "enabled": true,
+                    "offset": 2
                 }
             ],
             "minPeers": 0,
             "peerWindowSec": 60,
             "clusterByOui": false,
             "sequentialMac": false,
-            "notes": "MiBeacon product 0x30D9, 0x3BD5, 0x48CF (Body Composition Scale). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
+            "notes": "MiBeacon product 0x30D9, 0x3BD5, 0x48CF, 0x4FC2 (Body Composition Scale). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
             "attentionNote": "",
             "builtIn": true,
             "kind": "HEALTH"
@@ -4023,6 +4074,32 @@
             "kind": "HOME"
         },
         {
+            "id": "fleet-mibeacon-zhiee-flood-sj01",
+            "name": "Xiaomi zhiee.flood.sj01",
+            "enabled": true,
+            "matchAny": true,
+            "colorIndex": 4,
+            "rules": [
+                {
+                    "kind": "SERVICE_DATA",
+                    "text": "FE95",
+                    "companyId": 0,
+                    "dataPrefixHex": "1277",
+                    "radio": "BLE",
+                    "enabled": true,
+                    "offset": 2
+                }
+            ],
+            "minPeers": 0,
+            "peerWindowSec": 60,
+            "clusterByOui": false,
+            "sequentialMac": false,
+            "notes": "MiBeacon product 0x7712 (Water Leak Sensor). FE95 service data, product ID at offset 2. Source: Bluetooth-Devices/xiaomi-ble DEVICE_TYPES.",
+            "attentionNote": "",
+            "builtIn": true,
+            "kind": "HOME"
+        },
+        {
             "id": "fleet-mibeacon-esm787",
             "name": "Yanmi ESM787",
             "enabled": true,
@@ -4698,6 +4775,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "14:5C:DA",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "14:5E:69",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -4787,6 +4872,14 @@
                 {
                     "kind": "OUI",
                     "text": "20:64:CB",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "20:6D:9A",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -9431,6 +9524,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "48:13:18",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "48:28:2F",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -10247,6 +10348,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "7C:86:F3",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "7C:B3:0A",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -10688,6 +10797,14 @@
                 {
                     "kind": "OUI",
                     "text": "98:6C:F5",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "98:98:91",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -12922,6 +13039,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "2C:17:19",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "30:09:C0",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -13075,6 +13200,14 @@
                 {
                     "kind": "OUI",
                     "text": "60:1D:91",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "60:8D:28",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -13602,6 +13735,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "E4:22:24",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "E4:26:D5",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -13643,6 +13784,14 @@
                 {
                     "kind": "OUI",
                     "text": "EC:ED:73",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "F0:2E:7A",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -13947,6 +14096,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "10:01:8C",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "10:2A:B3",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -14164,6 +14321,14 @@
                 {
                     "kind": "OUI",
                     "text": "24:11:45",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "24:1F:BE",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -14715,6 +14880,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "50:EE:F8",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "50:FE:39",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -15228,6 +15401,14 @@
                 {
                     "kind": "OUI",
                     "text": "88:52:EB",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "88:54:E0",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -16035,6 +16216,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "D4:D9:6A",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "D4:DA:21",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -16809,6 +16998,14 @@
                 {
                     "kind": "OUI",
                     "text": "38:2F:B0",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "38:B9:B2",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -18092,6 +18289,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "D4:05:11",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "D8:14:DF",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -18726,6 +18931,14 @@
                 {
                     "kind": "OUI",
                     "text": "E0:28:B1",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "E4:FD:9D",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -22685,151 +22898,6 @@
             "kind": "SURVEILLANCE"
         },
         {
-            "id": "fleet-vendor-ezviz",
-            "name": "EZVIZ",
-            "enabled": true,
-            "matchAny": true,
-            "colorIndex": 2,
-            "rules": [
-                {
-                    "kind": "NAME_GLOB",
-                    "text": "EZVIZ*",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "0C:A6:4C",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "20:BB:BC",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "34:C6:DD",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "38:F2:5D",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "54:D6:0D",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "58:8F:CF",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "64:24:4D",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "64:F2:FB",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "78:A6:A0",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "78:C1:AE",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "94:EC:13",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "AC:1C:26",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "EC:97:E0",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "F4:70:18",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                },
-                {
-                    "kind": "OUI",
-                    "text": "FC:24:22",
-                    "companyId": 0,
-                    "dataPrefixHex": "",
-                    "radio": "WIFI",
-                    "enabled": true
-                }
-            ],
-            "minPeers": 0,
-            "peerWindowSec": 60,
-            "clusterByOui": false,
-            "sequentialMac": false,
-            "notes": "IEEE MA-L vendor block (Hangzhou Ezviz Software). Hikvision sub-brand with its own IEEE entity; no OUI overlap with Hikvision.",
-            "attentionNote": "",
-            "builtIn": true,
-            "kind": "SURVEILLANCE"
-        },
-        {
             "id": "fleet-vendor-anker",
             "name": "Anker",
             "enabled": true,
@@ -23549,6 +23617,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "1C:64:65",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "1C:69:20",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -23646,6 +23722,14 @@
                 {
                     "kind": "OUI",
                     "text": "20:D5:C2",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "20:E5:A4",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -23917,6 +24001,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "34:C9:34",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "34:CD:B0",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -23998,6 +24090,14 @@
                 {
                     "kind": "OUI",
                     "text": "3C:DC:75",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "3C:E2:55",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -24237,6 +24337,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "54:2B:88",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "54:32:04",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -24286,6 +24394,14 @@
                 {
                     "kind": "OUI",
                     "text": "58:8C:81",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "58:B1:45",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -24437,6 +24553,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "6C:2F:A0",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "6C:3D:D8",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -24446,6 +24570,14 @@
                 {
                     "kind": "OUI",
                     "text": "6C:B4:56",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "6C:C4:AF",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -25069,7 +25201,23 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "9C:E0:87",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "A0:20:A6",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "A0:60:25",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -25150,6 +25298,14 @@
                 {
                     "kind": "OUI",
                     "text": "A4:E5:7C",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "A4:E9:72",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -25350,6 +25506,14 @@
                 {
                     "kind": "OUI",
                     "text": "B4:E6:2D",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "B4:FE:B5",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -25637,6 +25801,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "CC:E7:32",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "D0:9A:AF",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -25710,6 +25882,14 @@
                 {
                     "kind": "OUI",
                     "text": "D8:13:2A",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "D8:23:32",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -25949,6 +26129,14 @@
                 },
                 {
                     "kind": "OUI",
+                    "text": "E8:ED:BD",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
                     "text": "E8:F6:0A",
                     "companyId": 0,
                     "dataPrefixHex": "",
@@ -26086,6 +26274,14 @@
                 {
                     "kind": "OUI",
                     "text": "F4:CF:A2",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "F8:0C:4E",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
@@ -26359,6 +26555,14 @@
                 {
                     "kind": "OUI",
                     "text": "54:65:03",
+                    "companyId": 0,
+                    "dataPrefixHex": "",
+                    "radio": "WIFI",
+                    "enabled": true
+                },
+                {
+                    "kind": "OUI",
+                    "text": "58:30:AC",
                     "companyId": 0,
                     "dataPrefixHex": "",
                     "radio": "WIFI",
