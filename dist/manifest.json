@@ -1,21 +1,21 @@
 {
-  "builtAt": "2026-10-11T07:50:53Z",
-  "catalogVersion": 102,
+  "builtAt": "2026-11-09T11:29:39Z",
+  "catalogVersion": 103,
   "catalog": {
     "file": "fieldwatch-signatures-v2.json",
-    "fleets": 611,
-    "rules": 10958,
-    "sha256": "400648333793cef7c086ae3c5da6c969ba4fdccde363264b41f56e7b1cda7f78"
+    "fleets": 616,
+    "rules": 10986,
+    "sha256": "83088064c0d40e847000df391148e3bd5254c0a03b53e6957e5bf453afb274a5"
   },
   "cnPack": {
     "file": "cn-pack.json",
-    "fleets": 152,
-    "sha256": "6be4c2dab9f91071de78583848635d525fe70ae61fae53aef0d8fea6e7be15d9"
+    "fleets": 153,
+    "sha256": "e2f677fc68cbd144ab98cb17531fce1cc3233c1eac99ee2e87e8b3ce81fe4e39"
   },
   "sources": {
     "upstream": {
-      "catalogVersion": 94,
-      "fleets": 254
+      "catalogVersion": 100,
+      "fleets": 258
     },
     "theengs": {
       "added": 123,
@@ -24,12 +24,12 @@
       "skipped_unexpressible": 17
     },
     "xiaomi_mibeacon": {
-      "added": 82,
-      "product_ids": 92,
-      "fleets": 82
+      "added": 84,
+      "product_ids": 95,
+      "fleets": 84
     },
     "ieee_vendors_new": {
-      "added": 38
+      "added": 37
     },
     "ieee_vendors": {
       "vendors": {
@@ -40,7 +40,7 @@
           ]
         },
         "OPPO": {
-          "oui_count": 191,
+          "oui_count": 193,
           "org_names": [
             "GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD",
             "OPPO Digital, Inc."
@@ -75,7 +75,7 @@
           ]
         },
         "ZTE": {
-          "oui_count": 502,
+          "oui_count": 505,
           "org_names": [
             "zte corporation"
           ]
@@ -103,13 +103,13 @@
           ]
         },
         "Motorola": {
-          "oui_count": 128,
+          "oui_count": 132,
           "org_names": [
             "Motorola Mobility LLC, a Lenovo Company"
           ]
         },
         "Xiaomi": {
-          "oui_count": 343,
+          "oui_count": 348,
           "org_names": [
             "Beijing Xiaomi Electronics Co., Ltd.",
             "Beijing Xiaomi Electronics Co.,Ltd",
@@ -143,7 +143,7 @@
           ]
         },
         "Midea": {
-          "oui_count": 54,
+          "oui_count": 55,
           "org_names": [
             "GD Midea Air-Conditioning Equipment Co.,Ltd.",
             "Midea Group Co., Ltd."
@@ -186,7 +186,7 @@
           ]
         },
         "TCL": {
-          "oui_count": 25,
+          "oui_count": 26,
           "org_names": [
             "HUIZHOU TCL COMMUNICATION ELECTRON CO.,LTD",
             "Shenzhen TCL New Technology Co., Ltd",
@@ -200,7 +200,7 @@
           ]
         },
         "Skyworth": {
-          "oui_count": 85,
+          "oui_count": 86,
           "org_names": [
             "Shenzhen Skyworth Digital  Technology  CO., Ltd",
             "Shenzhen Skyworth Display Technologies Co.,Ltd",
@@ -313,14 +313,14 @@
           ]
         },
         "Espressif module": {
-          "oui_count": 360,
+          "oui_count": 376,
           "org_names": [
             "Espressif Inc.",
             "Espressif Systems (Singapore) Pte. Ltd"
           ]
         },
         "Quectel module": {
-          "oui_count": 74,
+          "oui_count": 75,
           "org_names": [
             "Quectel Wireless Solutions Co.,Ltd."
           ]
@@ -354,7 +354,7 @@
           ]
         },
         "DJI (augment)": {
-          "oui_count": 16,
+          "oui_count": 17,
           "org_names": [
             "DJI BAIWANG TECHNOLOGY CO LTD",
             "DJI Osmo Technology Co., Ltd.",
@@ -373,16 +373,18 @@
         "fleet-dahua": 33,
         "fleet-hikvision": 86,
         "fleet-tuya": 42,
-        "fleet-dji": 16,
+        "fleet-dji": 17,
         "fleet-insta360": 1
       },
-      "skipped_existing_fleet": []
+      "skipped_existing_fleet": [
+        "EZVIZ"
+      ]
     },
     "ieee_vendors_augmented": {
       "fleet-dahua": 33,
       "fleet-hikvision": 86,
       "fleet-tuya": 42,
-      "fleet-dji": 16,
+      "fleet-dji": 17,
       "fleet-insta360": 1
     },
     "fastpair": {
@@ -430,15 +432,15 @@
   },
   "radiodb": {
     "file": "radiodb.bin",
-    "builtYmd": 20261011,
+    "builtYmd": 20261109,
     "sections": {
-      "mal": 40319,
-      "cid": 221,
-      "long": 13854,
-      "btc": 4047,
+      "mal": 40458,
+      "cid": 224,
+      "long": 13941,
+      "btc": 4065,
       "app": 342,
-      "uuid": 793
+      "uuid": 802
     },
-    "sha256": "88d4236679a3e01edc03f14b2391c91807b07de7e4c87693b2b17a3a00844f6b"
+    "sha256": "4806f927793838fc1aef32382c54bc053081b8fc2216e25e3e24f24e385badd9"
   }
 }
